@@ -1,2 +1,3 @@
 # dhunninghake.github.io
-My personal site
+
+Personal site, built with React
