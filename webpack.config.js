@@ -1,9 +1,12 @@
+
+
 var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
-var paths = [ '/' ];
+var paths = ['/'];
 var data = require('./src/data');
 
 module.exports = {
+  
   entry: './src/index.js',
 
   output: {
@@ -22,6 +25,11 @@ module.exports = {
           presets: ['es2015', 'react']
         }
       },
+      {
+        test: /\.css/,
+        exclude: /colors\.css/,
+        loaders: ['css-loader', 'cssnext-loader']
+      },
       { 
         test: /\.(png|jpg|jpeg|gif|woff)$/, 
         loader: 'url-loader?limit=1000000'
@@ -32,4 +40,15 @@ module.exports = {
   plugins: [
     new StaticSiteGeneratorPlugin('bundle.js', paths, data)
   ],
+
+  cssnext: {
+    compress: true,
+    features: {
+      rem: false,
+      pseudoElements: false,
+      colorRgba: false
+    }
+  }
+
 };
+

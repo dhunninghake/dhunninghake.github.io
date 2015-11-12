@@ -1,4 +1,6 @@
-import React, {PropTypes} from 'react';
+
+
+import React, { Component, PropTypes } from 'react';
 import Root from './components/Root.jsx';
 
 if (typeof document !== 'undefined') {
@@ -10,3 +12,4 @@ module.exports = function render(locals, callback) {
   var html = React.renderToString(React.createElement(Root, locals));
   callback(null, '<!DOCTYPE html>' + html);
 };
+
