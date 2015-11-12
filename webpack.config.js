@@ -2,7 +2,7 @@ var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
 var paths = [ '/' ];
 var data = require('./src/data');
- 
+
 module.exports = {
   entry: './src/index.js',
 
@@ -11,7 +11,7 @@ module.exports = {
     path: __dirname,
     libraryTarget: 'umd'
   },
-  
+
   module: {
     loaders: [
       {
@@ -21,7 +21,11 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
-      }
+      },
+      { 
+        test: /\.(png|jpg|jpeg|gif|woff)$/, 
+        loader: 'url-loader?limit=1000000'
+      },
     ]
   },
 

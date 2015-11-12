@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
+import Home from './Home.jsx';
 
 class Root extends React.Component {
   render() {
-    console.log(this.props);
     const initialProps = {
       __html: safeStringify(this.props)
     }
@@ -15,6 +15,7 @@ class Root extends React.Component {
           <meta name='viewport' content='width=device-width,initial-scale=1' />
         </head>
         <body>
+            <Home {...this.props} />
             <script id='initial-props'
               type='application/json'
               dangerouslySetInnerHTML={initialProps} />
@@ -31,3 +32,4 @@ function safeStringify(obj) {
 }
 
 export default Root
+
