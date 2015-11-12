@@ -7,9 +7,12 @@ class Home extends React.Component {
 
   render() {
     return (
-      <main>
-        <h1>{this.props.title}</h1>
-        <img src={avatar} />
+      <main className="table full-height col-12 center">
+        <div className="table-cell align-middle pb4">
+          <img style={{ width: '8rem' }} src={avatar} />
+          <h1 className="montserrat m0">{this.props.title}</h1>
+          <p>Product designer based in Brooklyn, NY</p>
+        </div>
       </main>
     )
   }

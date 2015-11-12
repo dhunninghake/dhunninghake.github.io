@@ -14,8 +14,9 @@ class Root extends React.Component {
       <html>
         <head>
           <meta charSet='utf-8' />
-          <title>{this.props.title}</title>
+          <title>{this.props.title + ' ' + this.props.symbol}</title>
           <meta name='viewport' content='width=device-width,initial-scale=1' />
+          <meta name='description' content={this.props.description} />
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
