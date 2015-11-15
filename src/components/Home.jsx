@@ -1,17 +1,22 @@
 
 
 import React, { Component, PropTypes } from 'react';
-import avatar from '../avatar.gif';
+import avatar from '../avatar.png';
 
 class Home extends React.Component {
 
   render() {
     return (
-      <main className="table full-height col-12 center">
-        <div className="table-cell align-middle pb4">
+      <main className='table full-height col-12 center'>
+        <div className='table-cell align-middle pb4'>
           <img style={{ width: '8rem' }} src={avatar} />
-          <h1 className="montserrat m0">{this.props.title}</h1>
-          <p>Product designer based in Brooklyn, NY</p>
+          <h1 className='montserrat m0'>{this.props.title}</h1>
+          <p className='md-col-4 mx-auto px2'>
+            {this.props.description + ' '}
+            <a className="black" href='https://twitter.com/drip' target='_blank'>
+              {this.props.employer}
+            </a>.
+          </p>
         </div>
       </main>
     )
