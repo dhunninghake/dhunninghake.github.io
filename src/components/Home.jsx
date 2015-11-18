@@ -7,13 +7,13 @@ class Home extends React.Component {
 
   render() {
     return (
-      <main className='table full-height col-12 center'>
+      <main className='table container full-height col-12 center'>
         <div className='table-cell align-middle pb4'>
           <img style={{ width: '8rem' }} src={avatar} />
           <h1 className='montserrat m0'>{this.props.title}</h1>
-          <p className='md-col-4 mx-auto px2'>
+          <p className='md-col-5 mx-auto px2'>
             {this.props.description + ' '}
-            <a className="black" href='https://twitter.com/drip' target='_blank'>
+            <a className="black" href='https://drip.com/' target='_blank'>
               {this.props.employer}
             </a>.
           </p>
