@@ -18,13 +18,13 @@ class Home extends React.Component {
             </a>.
           </p>
           <div className='mt3'>
-            <a className='black' href='mailto:daniel@drip.com' target='_blank'>
+            <a className='btn btn-outline silver' href='mailto:daniel@drip.com' target='_blank'>
               <Icon classes='inline-block align-middle' icon={'icon-contact'} width={15} height={15} viewbox={'0 0 469 469'} />
-              <span className='inline-block align-middle' style={{ marginLeft: '.3rem' }}>Contact</span>
+              <span className='inline-block align-middle black' style={{ marginLeft: '.3rem' }}>Contact</span>
             </a>
-            <a className='black ml3' href='https://twitter.com/dhunninghake' target='_blank'>
+            <a className='btn btn-outline silver ml2' href='https://twitter.com/dhunninghake' target='_blank'>
               <Icon classes='inline-block align-middle' icon={'icon-twitter'} width={15} height={15} viewbox={'0 0 2000 1625'} />
-              <span className='inline-block align-middle' style={{ marginLeft: '.3rem' }}>Follow</span>
+              <span className='inline-block align-middle black' style={{ marginLeft: '.3rem' }}>Follow</span>
             </a>
           </div>
         </div>

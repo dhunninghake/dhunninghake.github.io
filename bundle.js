@@ -20610,21 +20610,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	            { className: 'mt3' },
 	            _react2.default.createElement(
 	              'a',
-	              { className: 'black', href: 'mailto:daniel@drip.com', target: '_blank' },
+	              { className: 'btn btn-outline silver', href: 'mailto:daniel@drip.com', target: '_blank' },
 	              _react2.default.createElement(_Icon2.default, { classes: 'inline-block align-middle', icon: 'icon-contact', width: 15, height: 15, viewbox: '0 0 469 469' }),
 	              _react2.default.createElement(
 	                'span',
-	                { className: 'inline-block align-middle', style: { marginLeft: '.3rem' } },
+	                { className: 'inline-block align-middle black', style: { marginLeft: '.3rem' } },
 	                'Contact'
 	              )
 	            ),
 	            _react2.default.createElement(
 	              'a',
-	              { className: 'black ml3', href: 'https://twitter.com/dhunninghake', target: '_blank' },
+	              { className: 'btn btn-outline silver ml2', href: 'https://twitter.com/dhunninghake', target: '_blank' },
 	              _react2.default.createElement(_Icon2.default, { classes: 'inline-block align-middle', icon: 'icon-twitter', width: 15, height: 15, viewbox: '0 0 2000 1625' }),
 	              _react2.default.createElement(
 	                'span',
-	                { className: 'inline-block align-middle', style: { marginLeft: '.3rem' } },
+	                { className: 'inline-block align-middle black', style: { marginLeft: '.3rem' } },
 	                'Follow'
 	              )
 	            )
