@@ -31,3 +31,9 @@ class Icon extends React.Component {
 
 export default Icon
 
+Icon.propTypes = {
+  icon: React.PropTypes.string.isRequired,
+  width: React.PropTypes.number.isRequired,
+  height: React.PropTypes.number,
+  viewbox: React.PropTypes.string.isRequired,
+}

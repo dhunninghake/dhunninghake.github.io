@@ -20721,6 +20721,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = Icon;
 
+	Icon.propTypes = {
+	  icon: _react2.default.PropTypes.string.isRequired,
+	  width: _react2.default.PropTypes.number.isRequired,
+	  height: _react2.default.PropTypes.number,
+	  viewbox: _react2.default.PropTypes.string.isRequired
+	};
+
 /***/ },
 /* 161 */
 /***/ function(module, exports) {
