@@ -1,9 +1,10 @@
 
-
-import React, { Component, PropTypes } from 'react';
-import Home from './Home.jsx';
-import favicon from '../favicon.png';
-import css from '../style.css';
+import React, { Component } from 'react'
+import Banner from './Banner.jsx'
+import Nav from './Nav.jsx'
+import Work from './Work.jsx'
+import favicon from '../favicon.png'
+import css from '../style.css'
 
 class Root extends React.Component {
   render() {
@@ -15,14 +16,15 @@ class Root extends React.Component {
       <html>
         <head>
           <meta charSet='utf-8' />
-          <title>{this.props.title + ' ' + this.props.symbol}</title>
+          <title>{this.props.title}</title>
           <meta name='viewport' content='width=device-width,initial-scale=1' />
           <meta name='description' content={this.props.description + ' ' + this.props.employer} />
           <link rel='icon' href={favicon} />
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
-            <Home {...this.props} />
+            <Banner {...this.props} />
+            <Work />
             <script id='initial-props'
               type='application/json'
               dangerouslySetInnerHTML={initialProps} />
