@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import Banner from './Banner.jsx'
 import Nav from './Nav.jsx'
 import Footer from './Footer.jsx'
@@ -26,8 +27,12 @@ class Root extends React.Component {
         </head>
         <body>
             <Banner {...this.props} />
-            <Nav />
-            <Work />
+            <div className='relative'>
+              <Nav />
+            </div>
+            <div className='pad-nav'>
+              <Work />
+            </div>
             <Ghostly />
             <Footer />
             <script id='initial-props'

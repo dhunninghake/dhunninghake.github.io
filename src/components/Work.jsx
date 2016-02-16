@@ -38,7 +38,7 @@ class Work extends React.Component {
           <h1 className='montserrat-bold mb0'>Drip.com</h1>
           <p className='h5 mb1'><a className='gray-dark' href='https://drip.com' target='_blank'>drip.com</a></p>
           <p className='h5 mb1'>Drip is a beloved product that brings together arists and their superfans via monthly subscription. Since joining as employee #1 in January 2012, here’s what I’ve contributed:</p>
-          <ul className='h3 unstyled-list'>
+          <ul className='h3 list-reset'>
             <li>✰ Front-end Dev</li>
             <li>✰ Visual Design</li>
             <li>✰ User Experience</li>

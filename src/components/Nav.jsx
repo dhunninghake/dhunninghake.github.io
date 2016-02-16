@@ -1,12 +1,47 @@
 
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import Icon from './Icon.jsx'
 
 class Nav extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      class: props.initialClass,
+      active: props.initialActive
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  handleScroll(event) {
+    const scrollTop = event.srcElement.body.scrollTop;
+    const height = window.innerHeight - 73;
+
+    if (!this.state.active && scrollTop > height) {
+      this.setState({
+        class: 'fixed',
+        active: !this.props.initialActive
+      });
+    } else if (this.state.active && scrollTop < height) {
+      this.setState({
+        class: this.props.initialClass,
+        active: this.props.initialActive
+      });
+    }
+  }
+
   render() {
+    const classes = 'header l0 t0 z1 full-width bg-white ' + this.state.class;
     return (
-      <header className='header bg-white'>
+      <header className={classes}>
         <div className='container container--lg h4 montserrat-reg gray-dark clearfix'>
           <div className='left'>
             <span className='active inline-block mr1'>Daniel Hunninghake</span>
@@ -35,3 +70,12 @@ class Nav extends React.Component {
 
 export default Nav
 
+Nav.propTypes = { 
+  class: React.PropTypes.string,
+  active: React.PropTypes.bool
+};
+
+Nav.defaultProps = { 
+  initialClass: 'absolute',
+  initialActive: false
+};

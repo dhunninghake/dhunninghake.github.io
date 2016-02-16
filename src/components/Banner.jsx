@@ -12,10 +12,10 @@ class Banner extends React.Component {
       backgroundRepeat: 'no-repeat',
       backgroundColor: '#3f3f3f',
       backgroundBlendMode: 'multiply',
-      height: 'calc(100% - 72px)'
+      height: 'calc(100% - 73px)'
     }
     return (
-      <div className='table white pl3 pr3' style={bannerBg}>
+      <div ref='banner' className='table white pl3 pr3' style={bannerBg}>
         <div className='table-row full-height'>
           <div className='table-cell'>
             <div className='container container--sm full-width'>
