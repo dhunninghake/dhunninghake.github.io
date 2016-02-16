@@ -23,7 +23,7 @@ class Banner extends React.Component {
                 I’m a product designer and developer, hustling to bring ideas to life
                 <span className='merriweather'> ✌</span>
               </h1>
-              <p className='h3 mb2 pl3 pr3 muted-light center'>Currently reinventing how artists and their fans interact at <a className='white' href='https://drip.com' target='_blank'>Drip.com</a>. When I’m not obsessing over the details there, I’m <a className='white' href='https://soundcloud.com/dhunninghake'>crate digging for house records</a>, <a className='white' href='https://www.instagram.com/p/5fK2HImvPs/'>photographing typography</a>, and <a className='white' href='https://www.instagram.com/p/37v1GHGvLX'>eating clean</a>.</p>
+              <p className='h3 mb2 pl3 pr3 muted-light center'>Currently reinventing how artists and their fans interact at <a className='white' href='https://drip.com' target='_blank'>Drip.com</a>. When I’m not obsessing over the details there, I’m <a className='white' href='https://soundcloud.com/dhunninghake' target='_blank'>crate digging for house records</a>, <a className='white' href='https://www.instagram.com/p/5fK2HImvPs/' target='_blank'>photographing typography</a>, and <a className='white' href='https://www.instagram.com/p/37v1GHGvLX' target='_blank'>eating clean</a>.</p>
               <div className='center'><a className='button button-small button-banner white h3' href='mailto:dhunn1587@gmail.com'>Say hi ☞</a></div>
             </div>
           </div>

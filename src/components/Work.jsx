@@ -34,9 +34,9 @@ class Work extends React.Component {
     }
     return (
       <div className='container container--lg pt4 clearfix'>
-        <div className='col col-4 pr2 pb2'>
+        <div className='col full-width md-col-4 pr2 pb2'>
           <h1 className='montserrat-bold mb0'>Drip.com</h1>
-          <p className='h5 mb1'><a className='gray-dark' href='https://drip.com'>drip.com</a></p>
+          <p className='h5 mb1'><a className='gray-dark' href='https://drip.com' target='_blank'>drip.com</a></p>
           <p className='h5 mb1'>Drip is a beloved product that brings together arists and their superfans via monthly subscription. Since joining as employee #1 in January 2012, here’s what I’ve contributed:</p>
           <ul className='h3 unstyled-list'>
             <li>✰ Front-end Dev</li>
@@ -49,7 +49,7 @@ class Work extends React.Component {
             <li>✰ User Observation</li>
           </ul>
         </div>
-        <div className='col col-12'>
+        <div className='col full-width md-col-12'>
           <div className='browser mb2'>
             <img className='block' src={dripBrowser} />
             <div className='overflow-hidden'>
@@ -57,7 +57,7 @@ class Work extends React.Component {
             </div>
           </div>
           <img className='block border mb2' src={dripArtistPage} />
-          <div className='clearfix pb2 mxn1'>
+          <div className='clearfix pb2 neg'>
             <div className='pl1 pr1 col md-third'>
               <img className='block border' src={dripMobile1} />
             </div>

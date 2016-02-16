@@ -25,14 +25,24 @@
 }
 
 
-body, html { width: 100%; height: 100%; }
-html { -webkit-font-smoothing: antialiased; }
-html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
+body, html { 
+  width: 100%; 
+  height: 100%;
+}
+html { 
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+body { 
+  font-size: 1.375rem; 
+  line-height: 1.6; 
+}
 
-body { font-size: 1.375rem; line-height: 1.6; }
 svg { fill: currentColor; }
 img { max-width: 100%; }
+
+
 
 /*----------------------------------------
   TYPOGRAPHY
@@ -64,11 +74,11 @@ h2 { line-height: 1.5; }
 h1 { line-height: 1.2; }
 
 /* scale */
-.h0, h1, .h1  { font-size: 3.2rem; }
-h2, .h2 { font-size: 2.4rem; }
-h3, .h3 { font-size: 2rem; }
-h4, .h4 { font-size: 1.6rem; }
-h5, .h5 { font-size: 1.4rem; }
+.h0, h1, .h1  { font-size: 2rem; }
+h2, .h2 { font-size: 1.5rem; }
+h3, .h3 { font-size: 1.25rem; }
+h4, .h4 { font-size: 1rem; }
+h5, .h5 { font-size: .875rem; }
 h6, .h6 { font-size: 1.2rem; }
 .small { font-size: 1rem; }
 
@@ -187,10 +197,9 @@ h6, .h6 { font-size: 1.2rem; }
 .ml4 { margin-left: 4rem; }
 .mr4 { margin-right: 4rem; }
 
-.mxn1 { margin: 0 -1rem; }
-.mxn2 { margin: 0 -2rem; }
-.mxn3 { margin: 0 -3rem; }
-.mxn4 { margin: 0 -4rem; }
+@media only screen and (min-width: 768px) {
+  .neg { margin: 0 -1rem; }
+}
 
 .mx-auto { margin-left: auto; margin-right: auto;}
 .unstyled-list { 
