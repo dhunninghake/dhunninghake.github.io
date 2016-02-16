@@ -2,7 +2,9 @@
 import React, { Component } from 'react'
 import Banner from './Banner.jsx'
 import Nav from './Nav.jsx'
+import Footer from './Footer.jsx'
 import Work from './Work.jsx'
+import Ghostly from './Ghostly.jsx'
 import favicon from '../favicon.png'
 import css from '../style.css'
 
@@ -24,7 +26,10 @@ class Root extends React.Component {
         </head>
         <body>
             <Banner {...this.props} />
+            <Nav />
             <Work />
+            <Ghostly />
+            <Footer />
             <script id='initial-props'
               type='application/json'
               dangerouslySetInnerHTML={initialProps} />
