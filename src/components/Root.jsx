@@ -26,7 +26,7 @@ class Root extends React.Component {
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
-          <div className="wrapper">
+          <div className="bg-white">
             <Banner {...this.props} />
             <Work />
             <Ghostly />

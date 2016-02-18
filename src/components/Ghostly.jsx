@@ -11,7 +11,7 @@ import ghostlyMobile3 from '../ghostly-mobile-3.jpg'
 class Ghostly extends React.Component {
   render() {
     return (
-      <div className='container container--lg pt4 clearfix'>
+      <div className='container container--lg pt4 clearfix pad-work'>
         <div className='full-width md-col-14 mx-auto'>
           <div className='browser mb2'>
             <img className='block' src={ghostlyBrowser} />

@@ -51,7 +51,7 @@ class Work extends React.Component {
       transform: "translate(" + 0 + "," + -this.state.count + "%)"
     }
     return (
-      <div className='container container--lg clearfix'>
+      <div className='container container--lg clearfix pad-work'>
         <div className='full-width md-col-14 mx-auto'>
           <div className='browser mb2'>
             <img className='block' src={dripBrowser} />

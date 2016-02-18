@@ -28,7 +28,7 @@
 *, *:before, *:after { box-sizing: inherit; }
 body, html { 
   background-color: #eee;
-  padding: 0 1.5rem;
+  padding: 0 .3rem;
   width: 100%; 
   height: 100%;
 }
@@ -44,7 +44,9 @@ body {
 svg { fill: currentColor; }
 img { max-width: 100%; }
 
-
+@media screen and (min-width: 768px) {
+  body, html { padding: 0 1.5rem; }
+}
 
 /*----------------------------------------
   TYPOGRAPHY
@@ -216,9 +218,6 @@ h6, .h6 { font-size: 1.2rem; }
   GRID (16 columns)
 ----------------------------------------*/
 
-.wrapper {
-  background-color: #fff;
-}
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -382,11 +381,17 @@ h6, .h6 { font-size: 1.2rem; }
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
+.pad-banner { padding: 0 1rem; }
+.pad-work { padding: 0 1rem; }
+
 @media only screen and (min-width: 480px) {
   .browser { height: 29rem; }
 }
 @media only screen and (min-width: 768px) {
   .browser { height: 44rem; }
+  .md-center { text-align: center; }
+  .pad-banner { padding: 0 3rem; }
+  .pad-work { padding: 0; }
 }
 
 .screenshot { transition: all .8s ease-in-out; }
@@ -397,6 +402,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 .banner { height: 85vh; }
 .divider { padding: .5rem 0; }
+
 .contact {
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   position: fixed;
