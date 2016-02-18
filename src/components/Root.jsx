@@ -26,19 +26,16 @@ class Root extends React.Component {
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
+          <div className="wrapper">
             <Banner {...this.props} />
-            <div className='relative'>
-              <Nav />
-            </div>
-            <div className='pad-nav'>
-              <Work />
-            </div>
+            <Work />
             <Ghostly />
             <Footer />
-            <script id='initial-props'
-              type='application/json'
-              dangerouslySetInnerHTML={initialProps} />
-            <script src='bundle.js' />
+          </div>
+          <script id='initial-props'
+            type='application/json'
+            dangerouslySetInnerHTML={initialProps} />
+          <script src='bundle.js' />
         </body>
       </html>
     )

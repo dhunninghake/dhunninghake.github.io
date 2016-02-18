@@ -24,8 +24,26 @@ class Work extends React.Component {
     }
   }
 
-  componentDidMount() {
+  startInterval() {
     setInterval(this.tick.bind(this), this.props.pollInterval);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  handleScroll(event) {
+    const scrollTop = event.srcElement.body.scrollTop;
+
+    if (!this.state.active && scrollTop > 100) {
+      this.setState({active: !this.props.initialActive});
+      this.startInterval();
+    }
+
   }
 
   render() {
@@ -33,27 +51,35 @@ class Work extends React.Component {
       transform: "translate(" + 0 + "," + -this.state.count + "%)"
     }
     return (
-      <div className='container container--lg pt4 clearfix'>
-        <div className='col full-width md-col-4 pr2 pb2'>
-          <h1 className='montserrat-bold mb0'>Drip.com</h1>
-          <p className='h5 mb1'><a className='gray-dark' href='https://drip.com' target='_blank'>drip.com</a></p>
-          <p className='h5 mb1'>Drip is a beloved product that brings together arists and their superfans via monthly subscription. Since joining as employee #1 in January 2012, here’s what I’ve contributed:</p>
-          <ul className='h3 list-reset'>
-            <li>✰ Front-end Dev</li>
-            <li>✰ Visual Design</li>
-            <li>✰ User Experience</li>
-            <li>✰ Responsive Design</li>
-            <li>✰ Prototyping</li>
-            <li>✰ HTML Emails</li>
-            <li>✰ Market Research</li>
-            <li>✰ User Observation</li>
-          </ul>
-        </div>
-        <div className='col full-width md-col-12'>
+      <div className='container container--lg clearfix'>
+        <div className='full-width md-col-14 mx-auto'>
           <div className='browser mb2'>
             <img className='block' src={dripBrowser} />
             <div className='overflow-hidden'>
               <img className='screenshot' src={dripHp} style={divImage} />
+            </div>
+          </div>
+          <div className='container container--sm center pb2'>
+            <h2 className='montserrat-bold mb0'>Drip.com</h2>
+            <p className='h5 mb1'><a className='gray-dark' href='https://drip.com' target='_blank'>drip.com</a></p>
+            <h6 className="divider muted-heavy mb0">—</h6>
+            <div className='clearfix left-align pt2 pb2'>
+              <div className="col full-width md-col-4">
+                <ul className='h5 list-reset'>
+                  <li>✰ Front-end Dev</li>
+                  <li>✰ Visual Design</li>
+                  <li>✰ User Experience</li>
+                  <li>✰ Responsive Design</li>
+                  <li>✰ Prototyping</li>
+                  <li>✰ HTML Emails</li>
+                  <li>✰ Market Research</li>
+                  <li>✰ User Observation</li>
+                </ul>
+              </div>
+              <div className="col full-width md-col-12">
+                <p className='h3 mb1'>Drip is a music + tech startup that’s reinventing fan clubs for the modern musician, currently backed by Expa New York. Originally created in 2012 by Ghostly International—a record label with a cult following in electronic music—Drip has partnered with artists and labels like Skrillex’ OWSLA and Diplo’s Mad Decent to deliver exclusive audio and foster direct authentic connections with fans.</p>
+                <p className='h3 mb1'>As employee #1 in January 2012, I witnessed the product take shape and grow over the years, and I’ve grown as a creative professional alongside it. I learned to be a team player, to have empathy for the user and to iterate quickly.</p>
+              </div>
             </div>
           </div>
           <img className='block border mb2' src={dripArtistPage} />

@@ -27,6 +27,8 @@
 
 *, *:before, *:after { box-sizing: inherit; }
 body, html { 
+  background-color: #eee;
+  padding: 0 1.5rem;
   width: 100%; 
   height: 100%;
 }
@@ -83,9 +85,9 @@ h6, .h6 { font-size: 1.2rem; }
 .small { font-size: 1rem; }
 
 @media screen and (min-width: 768px) {
-  .h0 { font-size: 3.8rem; }
-  h1, .h1 { font-size: 2rem; }
-  h2, .h2 { font-size: 1.5rem; }
+  .h0 { font-size: 4rem; }
+  h1, .h1 { font-size: 3rem; }
+  h2, .h2 { font-size: 2rem; }
   h3, .h3 { font-size: 1.18rem; }
   h4, .h4 { font-size: 1rem; }
   h5, .h5 { font-size: 0.875rem; }
@@ -214,6 +216,9 @@ h6, .h6 { font-size: 1.2rem; }
   GRID (16 columns)
 ----------------------------------------*/
 
+.wrapper {
+  background-color: #fff;
+}
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -353,17 +358,17 @@ h6, .h6 { font-size: 1.2rem; }
 
 /* colors */
 .white { color: #fff; }
-.gray-dark { color: #333; }
+.gray-dark { color: #111; }
 
 /* bg colors */
 .bg-white { background-color: #fff; }
-.bg-gray-dark { background-color: #333; }
+.bg-gray-dark { background-color: #111; }
 
 
 
 
 .muted-light { opacity: .75; }
-.muted-heavy { opacity: .25; }
+.muted-heavy { opacity: .2; }
 .full-height { height: 100%; }
 
 .pl-icon { padding-left: .5rem; }
@@ -381,20 +386,20 @@ h6, .h6 { font-size: 1.2rem; }
   .browser { height: 29rem; }
 }
 @media only screen and (min-width: 768px) {
-  .browser { height: 38rem; }
+  .browser { height: 44rem; }
 }
 
-
-.screenshot {
-  transition: all .8s ease-in-out;
-}
-.header {
-  padding: 1.5rem 0;
-  box-shadow: 0 0 .4rem rgba(0,0,0,.3);
-}
-.pad-nav { padding-top: 4.56rem; }
+.screenshot { transition: all .8s ease-in-out; }
+.name { margin-bottom: .1rem; }
 
 .l0 { left: 0; }
 .t0 { top: 0; }
 
-
+.banner { height: 85vh; }
+.divider { padding: .5rem 0; }
+.contact {
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  right: 1.4rem;
+  top: 1.8rem;
+}
