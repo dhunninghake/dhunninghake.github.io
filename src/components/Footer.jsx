@@ -7,7 +7,7 @@ import Links from './Links.jsx'
 class Footer extends React.Component {
   render() {
     return (
-      <div className='container container--sm pt4 pb4'>
+      <div className='container container--sm pt4 pb4 pad-work'>
         <div className='pb2'>
           <Links />
         </div>
@@ -15,7 +15,7 @@ class Footer extends React.Component {
           <div className='left col-6 md-col-3 pb4'>
             <img className='block circle' src={Headshot} />
           </div>
-          <div className='left full-width md-col-13 pb4 pl2'>
+          <div className='left full-width md-col-13 pb4 pad-col-right'>
             <h1 className='montserrat-bold mt0 mb1'>
               Product design and development in BK
               <span className='merriweather'> ✌</span>

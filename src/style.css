@@ -392,6 +392,8 @@ h6, .h6 { font-size: 1.2rem; }
   .md-center { text-align: center; }
   .pad-banner { padding: 0 3rem; }
   .pad-work { padding: 0; }
+  .pad-col-right { padding-left: 2rem; }
+  .pad-mobile-shots { padding: 0 1rem; }
 }
 
 .screenshot { transition: all .8s ease-in-out; }

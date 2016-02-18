@@ -64,7 +64,7 @@ class Work extends React.Component {
             <p className='h5 mb1'><a className='gray-dark' href='https://drip.com' target='_blank'>drip.com</a></p>
             <h6 className="divider muted-heavy mb0">—</h6>
             <div className='clearfix left-align pt2 pb2'>
-              <div className="col full-width md-col-4">
+              <div className="col full-width md-col-4 pb2">
                 <ul className='h5 list-reset'>
                   <li>✰ Front-end Dev</li>
                   <li>✰ Visual Design</li>
@@ -83,14 +83,14 @@ class Work extends React.Component {
             </div>
           </div>
           <img className='block border mb2' src={dripArtistPage} />
-          <div className='clearfix pb2 neg'>
-            <div className='pl1 pr1 col md-third'>
+          <div className='clearfix neg'>
+            <div className='pad-mobile-shots pb2 col md-third'>
               <img className='block border' src={dripMobile1} />
             </div>
-            <div className='pl1 pr1 col md-third'>
+            <div className='pad-mobile-shots pb2 col md-third'>
               <img className='block border' src={dripMobile2} />
             </div>
-            <div className='pl1 pr1 col md-third'>
+            <div className='pad-mobile-shots pb2 col md-third'>
               <img className='block border' src={dripMobile3} />
             </div>
           </div>

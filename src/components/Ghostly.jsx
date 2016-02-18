@@ -24,7 +24,7 @@ class Ghostly extends React.Component {
             <p className='h5 mb1'><a className='gray-dark' href='http://theghostlystore.com' target='_blank'>theghostlystore.com</a></p>
             <h6 className="divider muted-heavy mb0">—</h6>
             <div className='clearfix left-align pt2 pb2'>
-              <div className="col full-width md-col-4">
+              <div className="col full-width md-col-4 pb2">
                 <ul className='h5 list-reset'>
                   <li>✰ Visual Design</li>
                   <li>✰ Front-end Dev</li>
@@ -41,14 +41,14 @@ class Ghostly extends React.Component {
           </div>
           <img className='block border mb2' src={ghostlyProduct} />
           <img className='block border mb2' src={ghostlyProductDetail} />
-          <div className='clearfix pb2 neg'>
-            <div className='pl1 pr1 col md-third'>
+          <div className='clearfix neg'>
+            <div className='pad-mobile-shots pb2 col md-third'>
               <img className='block border' src={ghostlyMobile1} />
             </div>
-            <div className='pl1 pr1 col md-third'>
+            <div className='pad-mobile-shots pb2 col md-third'>
               <img className='block border' src={ghostlyMobile2} />
             </div>
-            <div className='pl1 pr1 col md-third'>
+            <div className='pad-mobile-shots pb2 col md-third'>
               <img className='block border' src={ghostlyMobile3} />
             </div>
           </div>

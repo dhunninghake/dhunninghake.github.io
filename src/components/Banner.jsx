@@ -19,7 +19,7 @@ class Banner extends React.Component {
               </h1>
               <p className='h3 mb2 muted-light'>
                 Previously at Drip.com reinventing fan clubs for artists.<br />
-                Now, I’m looking for the next opportunity! <a className='gray-dark' href='mailto:d@dhunninghake.com'>Say hey</a>.
+                Now, I’m looking for the next adventure! <a className='gray-dark' href='mailto:d@dhunninghake.com'>Say hey</a>.
               </p>
               <Links />
             </div>
