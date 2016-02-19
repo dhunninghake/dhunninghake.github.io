@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Banner from './Banner.jsx'
-import Nav from './Nav.jsx'
 import Footer from './Footer.jsx'
 import Work from './Work.jsx'
 import Ghostly from './Ghostly.jsx'

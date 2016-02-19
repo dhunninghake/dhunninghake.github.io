@@ -1,17 +1,17 @@
 
 import React, { Component } from 'react'
 import Icon from './Icon.jsx'
-import Nav from './Nav.jsx'
+import Contact from './Contact.jsx'
 import Links from './Links.jsx'
 import BannerImg from '../banner-bg.jpg'
 
 class Banner extends React.Component {
   render() {
     return (
-      <div className='banner table pad-banner pb4'>
-        <Nav />
+      <div className='banner table pl1 pr1 md-pl3 md-pr3'>
+        <Contact />
         <div className='table-row full-height'>
-          <div className='table-cell pt3 pb1'>
+          <div className='table-cell pt3 pb3'>
             <div className='container container--sm md-center full-width'>
               <h1 className='h0 montserrat-bold m0 pb1'>
                 Daniel Hunninghake is a product designer and developer, hustling to bring ideas to life

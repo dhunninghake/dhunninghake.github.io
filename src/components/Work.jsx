@@ -51,7 +51,7 @@ class Work extends React.Component {
       transform: "translate(" + 0 + "," + -this.state.count + "%)"
     }
     return (
-      <div className='container container--lg clearfix pad-work'>
+      <div className='container container--lg clearfix pl1 pr1 md-pl0 md-pr0'>
         <div className='full-width md-col-14 mx-auto'>
           <div className='browser mb2'>
             <img className='block' src={dripBrowser} />
@@ -84,13 +84,13 @@ class Work extends React.Component {
           </div>
           <img className='block border mb2' src={dripArtistPage} />
           <div className='clearfix neg'>
-            <div className='pad-mobile-shots pb2 col md-third'>
+            <div className='col md-third pb2 md-pl1 md-pr1'>
               <img className='block border' src={dripMobile1} />
             </div>
-            <div className='pad-mobile-shots pb2 col md-third'>
+            <div className='col md-third pb2 md-pl1 md-pr1'>
               <img className='block border' src={dripMobile2} />
             </div>
-            <div className='pad-mobile-shots pb2 col md-third'>
+            <div className='col md-third pb2 md-pl1 md-pr1'>
               <img className='block border' src={dripMobile3} />
             </div>
           </div>

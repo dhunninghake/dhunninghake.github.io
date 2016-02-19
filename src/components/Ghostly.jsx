@@ -11,7 +11,7 @@ import ghostlyMobile3 from '../ghostly-mobile-3.jpg'
 class Ghostly extends React.Component {
   render() {
     return (
-      <div className='container container--lg pt4 clearfix pad-work'>
+      <div className='container container--lg pt4 clearfix pl1 pr1 md-pl0 md-pr0'>
         <div className='full-width md-col-14 mx-auto'>
           <div className='browser mb2'>
             <img className='block' src={ghostlyBrowser} />
@@ -42,13 +42,13 @@ class Ghostly extends React.Component {
           <img className='block border mb2' src={ghostlyProduct} />
           <img className='block border mb2' src={ghostlyProductDetail} />
           <div className='clearfix neg'>
-            <div className='pad-mobile-shots pb2 col md-third'>
+            <div className='col md-third pb2 md-pl1 md-pr1'>
               <img className='block border' src={ghostlyMobile1} />
             </div>
-            <div className='pad-mobile-shots pb2 col md-third'>
+            <div className='col md-third pb2 md-pl1 md-pr1'>
               <img className='block border' src={ghostlyMobile2} />
             </div>
-            <div className='pad-mobile-shots pb2 col md-third'>
+            <div className='col md-third pb2 md-pl1 md-pr1'>
               <img className='block border' src={ghostlyMobile3} />
             </div>
           </div>
