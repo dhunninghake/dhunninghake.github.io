@@ -4,6 +4,7 @@ import Icon from './Icon.jsx'
 import Contact from './Contact.jsx'
 import Links from './Links.jsx'
 import BannerImg from '../banner-bg.jpg'
+import Bitmoji from '../bitmoji.png'
 
 class Banner extends React.Component {
   render() {
@@ -15,7 +16,10 @@ class Banner extends React.Component {
             <div className='container container--sm md-center full-width'>
               <h1 className='h0 montserrat-bold m0 pb1'>
                 Daniel Hunninghake is a product designer and developer, hustling to bring ideas to life
-                <span className='merriweather'> ✌</span>
+                <div className='peace inbl ml1'>
+                  <Icon icon={'icon-peace'} width={34} height={48} viewbox={'0 0 478 684'} />
+                </div>
+                <img className='bitmoji fixed' width={200} src={Bitmoji}/>
               </h1>
               <p className='h3 mb2 muted-light'>
                 Previously at Drip.com reinventing fan clubs for artists.<br />

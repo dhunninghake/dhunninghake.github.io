@@ -13,7 +13,7 @@ class Ghostly extends React.Component {
     return (
       <div className='container container--lg pt4 clearfix pl1 pr1 md-pl0 md-pr0'>
         <div className='full-width md-col-14 mx-auto'>
-          <div className='browser mb2'>
+          <div className='browser shadow mb2'>
             <img className='block' src={ghostlyBrowser} />
             <div className='overflow-hidden'>
               <img src={ghostlyHp} />

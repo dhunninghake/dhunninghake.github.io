@@ -13,14 +13,14 @@ class Work extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {count: props.initialCount};
+    this.state = { count: props.initialCount };
   }
 
   tick() {
     if (this.state.count > 75) {
-      this.setState({count: this.props.initialCount});
+      this.setState({ count: this.props.initialCount });
     } else {
-      this.setState({count: this.state.count + this.props.distance});
+      this.setState({ count: this.state.count + this.props.distance });
     }
   }
 
@@ -40,7 +40,7 @@ class Work extends React.Component {
     const scrollTop = event.srcElement.body.scrollTop;
 
     if (!this.state.active && scrollTop > 100) {
-      this.setState({active: !this.props.initialActive});
+      this.setState({ active: !this.props.initialActive });
       this.startInterval();
     }
 
@@ -53,7 +53,7 @@ class Work extends React.Component {
     return (
       <div className='container container--lg clearfix pl1 pr1 md-pl0 md-pr0'>
         <div className='full-width md-col-14 mx-auto'>
-          <div className='browser mb2'>
+          <div className='browser shadow mb2'>
             <img className='block' src={dripBrowser} />
             <div className='overflow-hidden'>
               <img className='screenshot' src={dripHp} style={divImage} />
