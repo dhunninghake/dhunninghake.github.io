@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import dripHp from '../drip-screenshot.jpg'
+import dripHp from '../drip-hp.jpg'
 import dripArtistPage from '../drip-artist-page.jpg'
 import dripBrowser from '../drip-browser.jpg'
 import dripLikes from '../drip-likes.jpg'
