@@ -7,7 +7,20 @@ import BannerImg from '../banner-bg.jpg'
 import Bitmoji from '../bitmoji.png'
 
 class Banner extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { isReady: false };
+  }
+
+  componentDidMount() {
+    this.setState({ isReady: true });
+  }
+
   render() {
+
+    const animatePeace = this.state.isReady && 'animate-peace';
+
     return (
       <div className='banner table pl1 pr1 md-pl3 md-pr3'>
         <Contact />
@@ -16,7 +29,7 @@ class Banner extends React.Component {
             <div className='container container--sm md-center full-width'>
               <h1 className='h0 montserrat-bold m0 pb1'>
                 Daniel Hunninghake is a product designer and developer, hustling to bring ideas to life
-                <div className='peace inbl ml1'>
+                <div className={'peace inbl ml1 ' + animatePeace}>
                   <Icon icon={'icon-peace'} width={34} height={48} viewbox={'0 0 478 684'} />
                 </div>
                 <img className='bitmoji fixed' width={200} src={Bitmoji}/>
