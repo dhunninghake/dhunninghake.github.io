@@ -25,14 +25,14 @@ class Banner extends React.Component {
       <div className='banner table pl1 pr1 md-pl3 md-pr3'>
         <Contact />
         <div className='table-row full-height'>
-          <div className='table-cell pt3 pb3'>
+          <div className='table-cell pt4 pb4'>
             <div className='container container--sm md-center full-width'>
               <h1 className='h0 montserrat-bold m0 pb1'>
-                Daniel Hunninghake is a product designer and developer, hustling to bring ideas to life
-                <div className={'peace inbl ml1 ' + animatePeace}>
-                  <Icon icon={'icon-peace'} width={34} height={48} viewbox={'0 0 478 684'} />
+                Daniel Hunninghake is a product designer and developer, hustling to bring ideas to life&nbsp;
+                <div className={'peace inbl ' + animatePeace}>
+                  <Icon classes={'header-peace'} icon={'icon-peace'} viewbox={'0 0 478 684'} />
                 </div>
-                <img className='bitmoji fixed' width={200} src={Bitmoji}/>
+                <img className='bitmoji fixed z1' width={200} src={Bitmoji}/>
               </h1>
               <p className='h3 mb2 muted-light'>
                 Previously at Drip.com reinventing fan clubs for artists.<br />

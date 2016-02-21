@@ -68,7 +68,7 @@ export default Icon
 
 Icon.propTypes = {
   icon: React.PropTypes.string.isRequired,
-  width: React.PropTypes.number.isRequired,
+  width: React.PropTypes.number,
   height: React.PropTypes.number,
   viewbox: React.PropTypes.string.isRequired,
 }

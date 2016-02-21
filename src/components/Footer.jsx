@@ -17,8 +17,10 @@ class Footer extends React.Component {
           </div>
           <div className='left full-width md-col-13 pb4 md-pl2'>
             <h1 className='montserrat-bold mt0 mb1'>
-              Product design and development in BK
-              <span className='merriweather'> ✌</span>
+              Product design and development in BK&nbsp;
+              <div className={'peace inbl'}>
+                <Icon classes={'footer-peace'} icon={'icon-peace'} viewbox={'0 0 478 684'} />
+              </div>
             </h1>
             <p className='h3 mb1'>Previously at Drip.com solving fan clubs for artists. Catch me outside of the office <a className='gray-dark' href='https://soundcloud.com/dhunninghake' target='_blank'>crate digging for house records</a>, <a className='gray-dark' href='https://www.instagram.com/p/5fK2HImvPs/' target='_blank'>photographing typography</a>, and <a className='gray-dark' href='https://www.instagram.com/p/37v1GHGvLX' target='_blank'>eating clean</a>.</p>
             <p className='h3'>Front-end Dev (scalable, modular HTML &#43; CSS, JS), Visual Design, User Experience. You’ve made it this far, <a className='gray-dark' href='mailto:d@dhunninghake.com'>say hey</a>!</p>
