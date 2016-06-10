@@ -3,6 +3,7 @@
  *
  * t = typography
  * p = positioning
+ * w = whitespace
  *
  */
 
