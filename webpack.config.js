@@ -19,7 +19,8 @@ module.exports = {
             'react'
           ],
           plugins: [
-            'transform-runtime'
+            'transform-runtime',
+            'transform-decorators-legacy'
           ]
         }
       },
