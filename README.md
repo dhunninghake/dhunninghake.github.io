@@ -1,3 +1,3 @@
-# dhunninghake.github.io
+# http://dhunninghake.com
 
-Personal site, built with React
+Personal site, built with React and Radium
