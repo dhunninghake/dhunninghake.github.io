@@ -1,34 +1,27 @@
-
-
-var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
-
-var paths = ['/'];
-var data = require('./src/data');
+const webpack              = require('webpack');
+const HtmlWebpackPlugin    = require('html-webpack-plugin');
 
 module.exports = {
-  
-  entry: './src/index.js',
-
+  entry: __dirname + '/src/app.js',
   output: {
+    path: __dirname + '/build',
     filename: 'bundle.js',
-    path: __dirname,
-    libraryTarget: 'umd'
   },
-
   module: {
     loaders: [
       {
-        test: /.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+        test: /\.jsx?$/,
         query: {
-          presets: ['es2015', 'react']
+          presets: [
+            'es2015', 
+            'react'
+          ],
+          plugins: [
+            'transform-runtime'
+          ]
         }
-      },
-      {
-        test: /\.css/,
-        exclude: /colors\.css/,
-        loaders: ['css-loader', 'cssnext-loader']
       },
       { 
         test: /\.(png|jpg|jpeg|gif|woff)$/, 
@@ -36,19 +29,11 @@ module.exports = {
       },
     ]
   },
-
   plugins: [
-    new StaticSiteGeneratorPlugin('bundle.js', paths, data)
-  ],
-
-  cssnext: {
-    compress: true,
-    features: {
-      rem: false,
-      pseudoElements: false,
-      colorRgba: false
-    }
-  }
-
+    new HtmlWebpackPlugin({
+      template: __dirname + '/src/index.html',
+      filename: 'index.html',
+      inject: false
+    })
+  ]
 };
-
