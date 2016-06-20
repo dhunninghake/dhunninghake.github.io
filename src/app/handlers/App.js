@@ -1,10 +1,11 @@
 import React from 'react';
+import { StyleRoot } from 'radium';
 
 export default props => {
   return (
-    <div>
+    <StyleRoot>
       <div>{props.children}</div>
-    </div>
+    </StyleRoot>
   )
 }
 

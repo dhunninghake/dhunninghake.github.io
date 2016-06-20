@@ -1,107 +1,69 @@
-const scale = {
-  one:   '0.75rem',
-  two:   '0.875rem',
-  three: '1rem',
-  four:  '1.25rem',
-  five:  '1.5rem',
-  six:   '2rem',
-}
+const space = [
+  '0.5rem',
+  '1rem',
+  '2rem',
+  '4rem',
+]
 
-export default {
-  p1:  { padding: scale.one },
-  pt1: { paddingTop: scale.one },
-  pb1: { paddingBottom: scale.one },
-  pl1: { paddingLeft: scale.one },
-  pr1: { paddingRight: scale.one },
-  px1: { paddingLeft: scale.one, paddingRight: scale.one },
-  py1: { paddingTop: scale.one, paddingBottom: scale.one },
+export const mxAuto = { marginLeft: 'auto', marginRight: 'auto'};
 
-  p2:  { padding: scale.two },
-  pt2: { paddingTop: scale.two },
-  pb2: { paddingBottom: scale.two },
-  pl2: { paddingLeft: scale.two },
-  pr2: { paddingRight: scale.two },
-  px2: { paddingLeft: scale.two, paddingRight: scale.two },
-  py2: { paddingTop: scale.two, paddingBottom: scale.two },
+export const p0  = { padding: '0px' };
+export const pt0 = { paddingTop: '0px' };
+export const pb0 = { paddingBottom: '0px' };
+export const pl0 = { paddingLeft: '0px' };
+export const pr0 = { paddingRight: '0px' };
 
-  p3:  { padding: scale.three },
-  pt3: { paddingTop: scale.three },
-  pb3: { paddingBottom: scale.three },
-  pl3: { paddingLeft: scale.three },
-  pr3: { paddingRight: scale.three },
-  px3: { paddingLeft: scale.three, paddingRight: scale.three },
-  py3: { paddingTop: scale.three, paddingBottom: scale.three },
+export const p1  = { padding: space[0] };
+export const pt1 = { paddingTop: space[0] };
+export const pb1 = { paddingBottom: space[0] };
+export const pl1 = { paddingLeft: space[0] };
+export const pr1 = { paddingRight: space[0] };
 
-  p4:  { padding: scale.four },
-  pt4: { paddingTop: scale.four },
-  pb4: { paddingBottom: scale.four },
-  pl4: { paddingLeft: scale.four },
-  pr4: { paddingRight: scale.four },
-  px4: { paddingLeft: scale.four, paddingRight: scale.four },
-  py4: { paddingTop: scale.four, paddingBottom: scale.four },
+export const p2  = { padding: space[1] };
+export const pt2 = { paddingTop: space[1] };
+export const pb2 = { paddingBottom: space[1] };
+export const pl2 = { paddingLeft: space[1] };
+export const pr2 = { paddingRight: space[1] };
 
-  p5:  { padding: scale.five },
-  pt5: { paddingTop: scale.five },
-  pb5: { paddingBottom: scale.five },
-  pl5: { paddingLeft: scale.five },
-  pr5: { paddingRight: scale.five },
-  px5: { paddingLeft: scale.five, paddingRight: scale.five },
-  py5: { paddingTop: scale.five, paddingBottom: scale.five },
+export const p3  = { padding: space[2] };
+export const pt3 = { paddingTop: space[2] };
+export const pb3 = { paddingBottom: space[2] };
+export const pl3 = { paddingLeft: space[2] };
+export const pr3 = { paddingRight: space[2] };
 
-  p6:  { padding: scale.six },
-  pt6: { paddingTop: scale.six },
-  pb6: { paddingBottom: scale.six },
-  pl6: { paddingLeft: scale.six },
-  pr6: { paddingRight: scale.six },
-  px6: { paddingLeft: scale.six, paddingRight: scale.six },
-  py6: { paddingTop: scale.six, paddingBottom: scale.six },
+export const p4  = { padding: space[3] };
+export const pt4 = { paddingTop: space[3] };
+export const pb4 = { paddingBottom: space[3] };
+export const pl4 = { paddingLeft: space[3] };
+export const pr4 = { paddingRight: space[3] };
 
-  m1:  { margin: scale.one },
-  mt1: { marginTop: scale.one },
-  mb1: { marginBottom: scale.one },
-  ml1: { marginLeft: scale.one },
-  mr1: { marginRight: scale.one },
-  mx1: { marginLeft: scale.one, marginRight: scale.one },
-  my1: { marginTop: scale.one, marginBottom: scale.one },
+export const m0  = { margin: '0px' };
+export const mt0 = { marginTop: '0px' };
+export const mb0 = { marginBottom: '0px' };
+export const ml0 = { marginLeft: '0px' };
+export const mr0 = { marginRight: '0px' };
 
-  m2:  { margin: scale.two },
-  mt2: { marginTop: scale.two },
-  mb2: { marginBottom: scale.two },
-  ml2: { marginLeft: scale.two },
-  mr2: { marginRight: scale.two },
-  mx2: { marginLeft: scale.two, marginRight: scale.two },
-  my2: { marginTop: scale.two, marginBottom: scale.two },
+export const m1  = { margin: space[0] };
+export const mt1 = { marginTop: space[0] };
+export const mb1 = { marginBottom: space[0] };
+export const ml1 = { marginLeft: space[0] };
+export const mr1 = { marginRight: space[0] };
 
-  m3:  { margin: scale.three },
-  mt3: { marginTop: scale.three },
-  mb3: { marginBottom: scale.three },
-  ml3: { marginLeft: scale.three },
-  mr3: { marginRight: scale.three },
-  mx3: { marginLeft: scale.three, marginRight: scale.three },
-  my3: { marginTop: scale.three, marginBottom: scale.three },
+export const m2  = { margin: space[1] };
+export const mt2 = { marginTop: space[1] };
+export const mb2 = { marginBottom: space[1] };
+export const ml2 = { marginLeft: space[1] };
+export const mr2 = { marginRight: space[1] };
 
-  m4:  { margin: scale.four },
-  mt4: { marginTop: scale.four },
-  mb4: { marginBottom: scale.four },
-  ml4: { marginLeft: scale.four },
-  mr4: { marginRight: scale.four },
-  mx4: { marginLeft: scale.four, marginRight: scale.four },
-  my4: { marginTop: scale.four, marginBottom: scale.four },
+export const m3  = { margin: space[2] };
+export const mt3 = { marginTop: space[2] };
+export const mb3 = { marginBottom: space[2] };
+export const ml3 = { marginLeft: space[2] };
+export const mr3 = { marginRight: space[2] };
 
-  m5:  { margin: scale.five },
-  mt5: { marginTop: scale.five },
-  mb5: { marginBottom: scale.five },
-  ml5: { marginLeft: scale.five },
-  mr5: { marginRight: scale.five },
-  mx5: { marginLeft: scale.five, marginRight: scale.five },
-  my5: { marginTop: scale.five, marginBottom: scale.five },
-
-  m6:  { margin: scale.six },
-  mt6: { marginTop: scale.six },
-  mb6: { marginBottom: scale.six },
-  ml6: { marginLeft: scale.six },
-  mr6: { marginRight: scale.six },
-  mx6: { marginLeft: scale.six, marginRight: scale.six },
-  my6: { marginTop: scale.six, marginBottom: scale.six },
-}
+export const m4  = { margin: space[3] };
+export const mt4 = { marginTop: space[3] };
+export const mb4 = { marginBottom: space[3] };
+export const ml4 = { marginLeft: space[3] };
+export const mr4 = { marginRight: space[3] };
 
