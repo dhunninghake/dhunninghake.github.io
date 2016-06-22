@@ -29821,24 +29821,57 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _otherside = __webpack_require__(378);
+	var _radon = __webpack_require__(378);
 
-	var _otherside2 = _interopRequireDefault(_otherside);
+	var _radon2 = _interopRequireDefault(_radon);
 
-	var _typography = __webpack_require__(382);
+	var _Banner = __webpack_require__(386);
 
-	var _positioning = __webpack_require__(383);
+	var _Banner2 = _interopRequireDefault(_Banner);
 
-	var _whitespace = __webpack_require__(384);
+	var _whitespace = __webpack_require__(388);
 
-	var _grid = __webpack_require__(385);
+	var _whitespace2 = _interopRequireDefault(_whitespace);
+
+	var _typography = __webpack_require__(392);
+
+	var _typography2 = _interopRequireDefault(_typography);
+
+	var _positioning = __webpack_require__(393);
+
+	var _positioning2 = _interopRequireDefault(_positioning);
+
+	var _grid = __webpack_require__(389);
+
+	var _grid2 = _interopRequireDefault(_grid);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var container = (0, _otherside2.default)({
-	  small: [{ width: '95%' }, _whitespace.mxAuto],
-	  medium: [{ width: '90%' }],
-	  large: [{ width: '80%' }]
+	var typography = new _typography2.default();
+	var center = typography.center;
+	var rightAlign = typography.rightAlign;
+
+
+	var whitespace = new _whitespace2.default();
+	var pt4 = whitespace.pt4;
+
+
+	var grid = new _grid2.default(1280, 12);
+	var mediumCol9 = grid.mediumCol9;
+	var largeCol10 = grid.largeCol10;
+
+
+	var positioning = new _positioning2.default();
+	var table = positioning.table;
+	var tableCell = positioning.tableCell;
+	var fullWidth = positioning.fullWidth;
+	var overflowHidden = positioning.overflowHidden;
+	var left = positioning.left;
+	var mxAuto = positioning.mxAuto;
+
+
+	var container = (0, _radon2.default)({
+	  hover: [rightAlign]
 	});
 
 	var Home = (0, _radium2.default)(_class = function (_Component) {
@@ -29854,13 +29887,13 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { style: [container] },
+	        { style: [container, mediumCol9, largeCol10, mxAuto, pt4] },
 	        _react2.default.createElement(
 	          'header',
-	          { style: [_positioning.table, _grid.fullWidth] },
+	          { style: [table, fullWidth] },
 	          _react2.default.createElement(
 	            'div',
-	            { style: [_positioning.tableCell] },
+	            { style: [tableCell] },
 	            _react2.default.createElement(
 	              'h1',
 	              null,
@@ -29869,7 +29902,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { style: [_positioning.tableCell, _typography.rightAlign] },
+	            { style: [tableCell, rightAlign] },
 	            _react2.default.createElement(
 	              'p',
 	              null,
@@ -29877,32 +29910,7 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { style: [_grid.col9] },
-	          _react2.default.createElement(
-	            'h1',
-	            { style: [_typography.h0, _whitespace.m0] },
-	            'I’m a product designer and developer hustling to bring ideas to life.'
-	          ),
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            'Currently making artful interfaces at ',
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'http://sanctuary.computer/' },
-	              'Sanctuary Computer'
-	            ),
-	            '. Before that, I spent four years at ',
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'http://drip.com/' },
-	              'Drip.com'
-	            ),
-	            ' reinventing fan clubs for musicians. It was acquired by Kickstarter in April 2016.'
-	          )
-	        )
+	        _react2.default.createElement(_Banner2.default, { status: 'error' })
 	      );
 	    }
 	  }]);
@@ -31453,7 +31461,11 @@
 
 	var _keys2 = _interopRequireDefault(_keys);
 
-	exports.default = otherside;
+	var _assign = __webpack_require__(382);
+
+	var _assign2 = _interopRequireDefault(_assign);
+
+	exports.default = radon;
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31462,24 +31474,30 @@
 	  large: '@media (min-width: 1040px)'
 	};
 
-	function otherside(atomics) {
+	var PSEUDO = {
+	  hover: ':hover',
+	  active: ':active',
+	  focus: ':focus'
+	};
 
-	  if (!atomics.small) {
-	    throw new Error('Hey, you need a small!');
-	  }
+	function radon(atomics) {
 
 	  var radiumObject = {};
 
-	  atomics.small.forEach(function (sm) {
-	    for (var i in sm) {
-	      radiumObject[i] = sm[i];
-	    }
-	  });
+	  if (atomics.small) {
+	    atomics.small.forEach(function (sm) {
+	      for (var i in sm) {
+	        radiumObject[i] = sm[i];
+	      }
+	    });
+	  }
+
+	  var AllSelectors = (0, _assign2.default)({}, BREAKPOINTS, PSEUDO);
 
 	  (0, _keys2.default)(atomics).filter(function (size) {
 	    return size !== 'small';
 	  }).forEach(function (size) {
-	    if (!BREAKPOINTS[size]) {
+	    if (!AllSelectors[size]) {
 	      throw new Error(size + ' has not been defined');
 	    } else {
 	      (function () {
@@ -31489,7 +31507,7 @@
 	            mediaQueryObject[i] = atomic[i];
 	          }
 	        });
-	        radiumObject[BREAKPOINTS[size]] = mediaQueryObject;
+	        radiumObject[AllSelectors[size]] = mediaQueryObject;
 	      })();
 	    }
 	  });
@@ -31526,148 +31544,440 @@
 
 /***/ },
 /* 382 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var scale = ['0.75rem', '0.875rem', '1rem', '1.25rem', '1.5rem', '2rem', '4rem'];
-
-	var h0 = exports.h0 = { fontSize: scale[6] };
-	var h1 = exports.h1 = { fontSize: scale[5] };
-	var h2 = exports.h2 = { fontSize: scale[4] };
-	var h3 = exports.h3 = { fontSize: scale[3] };
-	var h4 = exports.h4 = { fontSize: scale[2] };
-	var h5 = exports.h5 = { fontSize: scale[1] };
-	var h6 = exports.h6 = { fontSize: scale[0] };
-
-	var center = exports.center = { textAlign: 'center' };
-	var leftAlign = exports.leftAlign = { textAlign: 'left' };
-	var rightAlign = exports.rightAlign = { textAlign: 'right' };
-
-	var alignTop = exports.alignTop = { verticalAlign: 'top' };
-	var alignMiddle = exports.alignMiddle = { verticalAlign: 'middle' };
-	var alignBottom = exports.alignBottom = { verticalAlign: 'bottom' };
-
-	var italic = exports.italic = { fontStyle: 'italic' };
-	var caps = exports.caps = { textTransform: 'uppercase' };
-	var justify = exports.justify = { textAlign: 'justify' };
-	var noWrap = exports.noWrap = { whiteSpace: 'nowrap' };
-	var underline = exports.underline = { textDecoration: 'underline' };
-	var noUnderline = exports.noUnderline = { textDecoration: 'none' };
-	var trackedOut = exports.trackedOut = { letterSpacing: '0.1em' };
-	var listReset = exports.listReset = { listStyle: 'none', paddingLeft: '0px' };
+	module.exports = { "default": __webpack_require__(383), __esModule: true };
 
 /***/ },
 /* 383 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var relative = exports.relative = { position: 'relative' };
-	var absolute = exports.absolute = { position: 'absolute' };
-	var fixed = exports.fixed = { position: 'fixed', willChange: 'transform' };
-
-	var top0 = exports.top0 = { top: '0px' };
-	var left0 = exports.left0 = { left: '0px' };
-	var right0 = exports.right0 = { right: '0px' };
-	var bottom0 = exports.bottom0 = { bottom: '0px' };
-
-	var inline = exports.inline = { display: 'inline' };
-	var block = exports.block = { display: 'block' };
-	var inlineBlock = exports.inlineBlock = { display: 'inline-block' };
-	var tableRow = exports.tableRow = { display: 'table-row' };
-	var tableCell = exports.tableCell = { display: 'table-cell', verticalAlign: 'middle' };
-	var table = exports.table = { display: 'table', borderSpacing: '0px', width: '100%' };
-
-	var left = exports.left = { float: 'left' };
-	var right = exports.right = { float: 'right' };
-
-	var overflowAuto = exports.overflowAuto = { overflow: 'auto' };
-	var overflowHidden = exports.overflowHidden = { overflow: 'hidden' };
-	var overflowVisible = exports.overflowVisible = { overflow: 'visible' };
-	var overflowScroll = exports.overflowScroll = { overflow: 'scroll' };
+	__webpack_require__(384);
+	module.exports = __webpack_require__(305).Object.assign;
 
 /***/ },
 /* 384 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(304);
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var space = ['0.5rem', '1rem', '2rem', '4rem'];
-
-	var mxAuto = exports.mxAuto = { marginLeft: 'auto', marginRight: 'auto' };
-
-	var p0 = exports.p0 = { padding: '0px' };
-	var pt0 = exports.pt0 = { paddingTop: '0px' };
-	var pb0 = exports.pb0 = { paddingBottom: '0px' };
-	var pl0 = exports.pl0 = { paddingLeft: '0px' };
-	var pr0 = exports.pr0 = { paddingRight: '0px' };
-
-	var p1 = exports.p1 = { padding: space[0] };
-	var pt1 = exports.pt1 = { paddingTop: space[0] };
-	var pb1 = exports.pb1 = { paddingBottom: space[0] };
-	var pl1 = exports.pl1 = { paddingLeft: space[0] };
-	var pr1 = exports.pr1 = { paddingRight: space[0] };
-
-	var p2 = exports.p2 = { padding: space[1] };
-	var pt2 = exports.pt2 = { paddingTop: space[1] };
-	var pb2 = exports.pb2 = { paddingBottom: space[1] };
-	var pl2 = exports.pl2 = { paddingLeft: space[1] };
-	var pr2 = exports.pr2 = { paddingRight: space[1] };
-
-	var p3 = exports.p3 = { padding: space[2] };
-	var pt3 = exports.pt3 = { paddingTop: space[2] };
-	var pb3 = exports.pb3 = { paddingBottom: space[2] };
-	var pl3 = exports.pl3 = { paddingLeft: space[2] };
-	var pr3 = exports.pr3 = { paddingRight: space[2] };
-
-	var p4 = exports.p4 = { padding: space[3] };
-	var pt4 = exports.pt4 = { paddingTop: space[3] };
-	var pb4 = exports.pb4 = { paddingBottom: space[3] };
-	var pl4 = exports.pl4 = { paddingLeft: space[3] };
-	var pr4 = exports.pr4 = { paddingRight: space[3] };
-
-	var m0 = exports.m0 = { margin: '0px' };
-	var mt0 = exports.mt0 = { marginTop: '0px' };
-	var mb0 = exports.mb0 = { marginBottom: '0px' };
-	var ml0 = exports.ml0 = { marginLeft: '0px' };
-	var mr0 = exports.mr0 = { marginRight: '0px' };
-
-	var m1 = exports.m1 = { margin: space[0] };
-	var mt1 = exports.mt1 = { marginTop: space[0] };
-	var mb1 = exports.mb1 = { marginBottom: space[0] };
-	var ml1 = exports.ml1 = { marginLeft: space[0] };
-	var mr1 = exports.mr1 = { marginRight: space[0] };
-
-	var m2 = exports.m2 = { margin: space[1] };
-	var mt2 = exports.mt2 = { marginTop: space[1] };
-	var mb2 = exports.mb2 = { marginBottom: space[1] };
-	var ml2 = exports.ml2 = { marginLeft: space[1] };
-	var mr2 = exports.mr2 = { marginRight: space[1] };
-
-	var m3 = exports.m3 = { margin: space[2] };
-	var mt3 = exports.mt3 = { marginTop: space[2] };
-	var mb3 = exports.mb3 = { marginBottom: space[2] };
-	var ml3 = exports.ml3 = { marginLeft: space[2] };
-	var mr3 = exports.mr3 = { marginRight: space[2] };
-
-	var m4 = exports.m4 = { margin: space[3] };
-	var mt4 = exports.mt4 = { marginTop: space[3] };
-	var mb4 = exports.mb4 = { marginBottom: space[3] };
-	var ml4 = exports.ml4 = { marginLeft: space[3] };
-	var mr4 = exports.mr4 = { marginRight: space[3] };
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(385)});
 
 /***/ },
 /* 385 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	// 19.1.2.1 Object.assign(target, source, ...)
+	var getKeys  = __webpack_require__(337)
+	  , gOPS     = __webpack_require__(361)
+	  , pIE      = __webpack_require__(362)
+	  , toObject = __webpack_require__(295)
+	  , IObject  = __webpack_require__(340)
+	  , $assign  = Object.assign;
+
+	// should work with symbols and should have deterministic property order (V8 bug)
+	module.exports = !$assign || __webpack_require__(314)(function(){
+	  var A = {}
+	    , B = {}
+	    , S = Symbol()
+	    , K = 'abcdefghijklmnopqrst';
+	  A[S] = 7;
+	  K.split('').forEach(function(k){ B[k] = k; });
+	  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+	  var T     = toObject(target)
+	    , aLen  = arguments.length
+	    , index = 1
+	    , getSymbols = gOPS.f
+	    , isEnum     = pIE.f;
+	  while(aLen > index){
+	    var S      = IObject(arguments[index++])
+	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+	      , length = keys.length
+	      , j      = 0
+	      , key;
+	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+	  } return T;
+	} : $assign;
+
+/***/ },
+/* 386 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _getPrototypeOf = __webpack_require__(292);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(319);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(323);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(370);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _class;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _radium = __webpack_require__(231);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	var _Button = __webpack_require__(387);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	var _whitespace = __webpack_require__(388);
+
+	var _whitespace2 = _interopRequireDefault(_whitespace);
+
+	var _typography = __webpack_require__(392);
+
+	var _typography2 = _interopRequireDefault(_typography);
+
+	var _grid = __webpack_require__(389);
+
+	var _grid2 = _interopRequireDefault(_grid);
+
+	var _colors = __webpack_require__(391);
+
+	var _colors2 = _interopRequireDefault(_colors);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var grid = new _grid2.default(1280, 12);
+	var col9 = grid.col9;
+
+
+	var whitespace = new _whitespace2.default();
+	var m0 = whitespace.m0;
+
+
+	var colors = new _colors2.default();
+	var green = colors.green;
+	var red = colors.red;
+	var yellow = colors.yellow;
+	var fuchsia = colors.fuchsia;
+
+
+	var typography = new _typography2.default();
+	var h0 = typography.h0;
+	var PropTypes = _react2.default.PropTypes;
+
+
+	var statusColor = {
+	  success: green,
+	  warning: yellow,
+	  error: red
+	};
+
+	var Banner = (0, _radium2.default)(_class = function (_Component) {
+	  (0, _inherits3.default)(Banner, _Component);
+
+	  function Banner() {
+	    (0, _classCallCheck3.default)(this, Banner);
+	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Banner).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(Banner, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { style: [fuchsia, col9, statusColor[this.props.status]] },
+	        _react2.default.createElement(
+	          'h1',
+	          { style: [h0, m0] },
+	          'I’m a product designer and developer hustling to bring ideas to life.'
+	        ),
+	        _react2.default.createElement(
+	          'h4',
+	          null,
+	          'Currently making artful interfaces at ',
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://sanctuary.computer/' },
+	            'Sanctuary Computer'
+	          ),
+	          '. Before that, I spent four years at ',
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://drip.com/' },
+	            'Drip.com'
+	          ),
+	          ' reinventing fan clubs for musicians. It was acquired by Kickstarter in April 2016.'
+	        ),
+	        _react2.default.createElement(_Button2.default, { text: 'Submit', size: 'wide' })
+	      );
+	    }
+	  }]);
+	  return Banner;
+	}(_react.Component)) || _class;
+
+	Banner.propTypes = {
+	  status: PropTypes.string
+	};
+	exports.default = Banner;
+
+/***/ },
+/* 387 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _getPrototypeOf = __webpack_require__(292);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(319);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(323);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(370);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _class;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _radium = __webpack_require__(231);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	var _radon = __webpack_require__(378);
+
+	var _radon2 = _interopRequireDefault(_radon);
+
+	var _whitespace = __webpack_require__(388);
+
+	var _whitespace2 = _interopRequireDefault(_whitespace);
+
+	var _grid = __webpack_require__(389);
+
+	var _grid2 = _interopRequireDefault(_grid);
+
+	var _colors = __webpack_require__(391);
+
+	var _colors2 = _interopRequireDefault(_colors);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var grid = new _grid2.default(1280, 12);
+	var col2 = grid.col2;
+	var col4 = grid.col4;
+	var col7 = grid.col7;
+	var col10 = grid.col10;
+
+
+	var colors = new _colors2.default();
+	var bgBlack = colors.bgBlack;
+	var bgFuschia = colors.bgFuschia;
+	var bgGreen = colors.bgGreen;
+	var bgRed = colors.bgRed;
+	var white = colors.white;
+
+
+	var whitespace = new _whitespace2.default();
+	var p2 = whitespace.p2;
+	var PropTypes = _react2.default.PropTypes;
+
+
+	var button = {
+	  base: [{ border: '0px' }, p2, bgBlack, white, col2],
+	  thin: [col4],
+	  regular: [col7],
+	  wide: (0, _radon2.default)({
+	    small: [col10, bgFuschia],
+	    medium: [bgGreen],
+	    large: [bgRed, (0, _radon2.default)({
+	      hover: [bgBlack]
+	    })]
+	  })
+	};
+
+	console.log(button);
+
+	var Button = (0, _radium2.default)(_class = function (_Component) {
+	  (0, _inherits3.default)(Button, _Component);
+
+	  function Button() {
+	    (0, _classCallCheck3.default)(this, Button);
+	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Button).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(Button, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'button',
+	        { style: [button.base, button[this.props.size]] },
+	        this.props.text
+	      );
+	    }
+	  }]);
+	  return Button;
+	}(_react.Component)) || _class;
+
+	Button.propTypes = {
+	  text: PropTypes.string,
+	  size: PropTypes.string
+	};
+	exports.default = Button;
+
+/***/ },
+/* 388 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Whitespace = function Whitespace() {
+	  var unit = arguments.length <= 0 || arguments[0] === undefined ? 1 : arguments[0];
+	  (0, _classCallCheck3.default)(this, Whitespace);
+
+	  var range = [0, 0.5, 1, 2, 4];
+
+	  range = range.map(function (number) {
+	    return number * unit + 'rem';
+	  });
+
+	  var i = 0;
+	  while (i < range.length) {
+	    this['p' + i] = { padding: range[i] };
+	    this['pt' + i] = { paddingTop: range[i] };
+	    this['pb' + i] = { paddingBottom: range[i] };
+	    this['pl' + i] = { paddingLeft: range[i] };
+	    this['pr' + i] = { paddingRight: range[i] };
+
+	    this['m' + i] = { margin: range[i] };
+	    this['mt' + i] = { marginTop: range[i] };
+	    this['mb' + i] = { marginBottom: range[i] };
+	    this['ml' + i] = { marginLeft: range[i] };
+	    this['mr' + i] = { marginRight: range[i] };
+	    i++;
+	  }
+	};
+
+	exports.default = Whitespace;
+
+/***/ },
+/* 389 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _keys = __webpack_require__(379);
+
+	var _keys2 = _interopRequireDefault(_keys);
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(319);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _radon = __webpack_require__(378);
+
+	var _radon2 = _interopRequireDefault(_radon);
+
+	var _settings = __webpack_require__(390);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Grid = function () {
+	  function Grid() {
+	    var _this = this;
+
+	    var maxWidth = arguments.length <= 0 || arguments[0] === undefined ? 1280 : arguments[0];
+	    var columns = arguments.length <= 1 || arguments[1] === undefined ? 12 : arguments[1];
+	    (0, _classCallCheck3.default)(this, Grid);
+
+	    this.maxWidth = maxWidth;
+	    this.columns = columns;
+
+	    var i = 1;
+	    while (i < this.columns) {
+	      this['col' + i] = { width: this.calculateWidth(i) };
+	      i++;
+	    }
+
+	    (0, _keys2.default)(_settings.breakpoints).forEach(function (breakpoint) {
+	      var j = 1;
+	      while (j < _this.columns) {
+	        var someObject = {};
+	        someObject[breakpoint] = [{ width: _this.calculateWidth(j) }];
+	        _this[breakpoint + 'Col' + j] = (0, _radon2.default)(someObject);
+	        j++;
+	      }
+	    });
+	  }
+
+	  (0, _createClass3.default)(Grid, [{
+	    key: 'calculateWidth',
+	    value: function calculateWidth(columnCount) {
+	      return columnCount / this.columns * 100 + '%';
+	    }
+	  }]);
+	  return Grid;
+	}();
+
+	exports.default = Grid;
+
+/***/ },
+/* 390 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -31675,25 +31985,174 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var gridWidth = function gridWidth(columns) {
-	  return columns / 12 * 100 + '%';
+	var breakpoints = exports.breakpoints = {
+	  medium: '@media (min-width: 768px)',
+	  large: '@media (min-width: 1040px)'
 	};
 
-	var col1 = exports.col1 = { width: gridWidth(1) };
-	var col2 = exports.col2 = { width: gridWidth(2) };
-	var col3 = exports.col3 = { width: gridWidth(3) };
-	var col4 = exports.col4 = { width: gridWidth(4) };
-	var col5 = exports.col5 = { width: gridWidth(5) };
-	var col6 = exports.col6 = { width: gridWidth(6) };
-	var col7 = exports.col7 = { width: gridWidth(7) };
-	var col8 = exports.col8 = { width: gridWidth(8) };
-	var col9 = exports.col9 = { width: gridWidth(9) };
-	var col10 = exports.col10 = { width: gridWidth(10) };
-	var col11 = exports.col11 = { width: gridWidth(11) };
-	var col12 = exports.col12 = { width: gridWidth(12) };
+	var colors = exports.colors = {
+	  white: 'white',
+	  black: 'black',
+	  fuschia: 'fuchsia',
+	  green: 'green',
+	  red: 'red',
+	  yellow: 'yellow'
+	};
 
-	var fullWidth = exports.fullWidth = { width: '100%' };
-	var fullHeight = exports.fullHeight = { height: '100%' };
+/***/ },
+/* 391 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _keys = __webpack_require__(379);
+
+	var _keys2 = _interopRequireDefault(_keys);
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(319);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _settings = __webpack_require__(390);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Colors = function () {
+	  function Colors() {
+	    var _this = this;
+
+	    (0, _classCallCheck3.default)(this, Colors);
+
+	    (0, _keys2.default)(_settings.colors).forEach(function (color) {
+	      _this[color] = { color: _settings.colors[color] };
+	      _this['bg' + _this.capitalizeFirstLetter(color)] = { backgroundColor: _settings.colors[color] };
+	      _this['border' + _this.capitalizeFirstLetter(color)] = { borderColor: _settings.colors[color] };
+	    });
+	  }
+
+	  (0, _createClass3.default)(Colors, [{
+	    key: 'capitalizeFirstLetter',
+	    value: function capitalizeFirstLetter(color) {
+	      return color.charAt(0).toUpperCase() + color.slice(1);
+	    }
+	  }]);
+	  return Colors;
+	}();
+
+	exports.default = Colors;
+
+/***/ },
+/* 392 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Typography = function Typography() {
+	  var unit = arguments.length <= 0 || arguments[0] === undefined ? 1 : arguments[0];
+	  (0, _classCallCheck3.default)(this, Typography);
+
+	  var scale = ['4', '2', '1.5', '1.25', '1', '0.875', '0.75'];
+
+	  var newScale = scale.map(function (value) {
+	    return value * unit + 'rem';
+	  });
+
+	  var i = 0;
+	  while (i < newScale.length) {
+	    this['h' + i] = { fontSize: newScale[i] };
+	    i++;
+	  }
+
+	  this['center'] = { textAlign: 'center' };
+	  this['leftAlign'] = { textAlign: 'left' };
+	  this['rightAlign'] = { textAlign: 'right' };
+
+	  this['alignTop'] = { verticalAlign: 'top' };
+	  this['alignMiddle'] = { verticalAlign: 'middle' };
+	  this['alignBottom'] = { verticalAlign: 'bottom' };
+
+	  this['italic'] = { fontStyle: 'italic' };
+	  this['caps'] = { textTransform: 'uppercase' };
+	  this['justify'] = { textAlign: 'justify' };
+	  this['noWrap'] = { whiteSpace: 'nowrap' };
+	  this['underline'] = { textDecoration: 'underline' };
+	  this['noUnderline'] = { textDecoration: 'none' };
+	  this['trackedOut'] = { letterSpacing: '0.1em' };
+	  this['listReset'] = { listStyle: 'none', paddingLeft: '0px' };
+	};
+
+	exports.default = Typography;
+
+/***/ },
+/* 393 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Positioning = function Positioning() {
+	  (0, _classCallCheck3.default)(this, Positioning);
+
+	  this['relative'] = { position: 'relative' };
+	  this['absolute'] = { position: 'absolute' };
+	  this['fixed'] = { position: 'fixed', willChange: 'transform' };
+
+	  this['top0'] = { top: '0px' };
+	  this['left0'] = { left: '0px' };
+	  this['right0'] = { right: '0px' };
+	  this['bottom0'] = { bottom: '0px' };
+
+	  this['inline'] = { display: 'inline' };
+	  this['block'] = { display: 'block' };
+	  this['inlineBlock'] = { display: 'inline-block' };
+	  this['tableRow'] = { display: 'table-row' };
+	  this['tableCell'] = { display: 'table-cell', verticalAlign: 'middle' };
+	  this['table'] = { display: 'table', borderSpacing: '0px', width: '100%' };
+
+	  this['left'] = { float: 'left' };
+	  this['right'] = { float: 'right' };
+
+	  this['overflowAuto'] = { overflow: 'auto' };
+	  this['overflowHidden'] = { overflow: 'hidden' };
+	  this['overflowVisible'] = { overflow: 'visible' };
+	  this['overflowScroll'] = { overflow: 'scroll' };
+
+	  this['fullWidth'] = { width: '100%' };
+	  this['fullHeight'] = { height: '100%' };
+	  this['mxAuto'] = { marginLeft: 'auto', marginRight: 'auto' };
+	};
+
+	exports.default = Positioning;
 
 /***/ }
 /******/ ]);

@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
-import otherside from '../otherside/otherside';
+import radon from '../radon/radon';
+import Banner from '../components/Banner';
+import Whitespace from '../lib/css/whitespace';
+import Typography from '../lib/css/typography';
+import Positioning from '../lib/css/positioning';
+import Grid from '../lib/css/grid';
 
-import { center, rightAlign, h0 } from '../lib/css/typography';
+const typography = new Typography();
+const { center, rightAlign } = typography;
 
-import { table, tableCell } from '../lib/css/positioning';
+const whitespace = new Whitespace();
+const { pt4 } = whitespace;
 
-import { mxAuto, pt4, m0 } from '../lib/css/whitespace';
+const grid = new Grid(1280, 12);
+const { mediumCol9, largeCol10 } = grid;
 
-import { fullWidth, col9 } from '../lib/css/grid';
+const positioning = new Positioning();
+const { table, tableCell, fullWidth, overflowHidden, left, mxAuto } = positioning;
 
-const container = otherside({
-  small:  [{width: '95%'}, mxAuto],
-  medium: [{width: '90%'}],
-  large:  [{width: '80%'}]
-});
+const container = radon({
+  hover: [rightAlign],
+})
 
 @Radium
 export default class Home extends Component {
   render() {
     return (
-      <div style={[container]}>
+      <div style={[container, mediumCol9, largeCol10, mxAuto, pt4]}>
         <header style={[table, fullWidth]}>
           <div style={[tableCell]}>
             <h1>Daniel Hunninghake</h1>
@@ -29,10 +36,7 @@ export default class Home extends Component {
             <p>&#x270c;</p>
           </div>
         </header>
-        <div style={[col9]}>
-          <h1 style={[h0, m0]}>I’m a product designer and developer hustling to bring ideas to life.</h1>
-          <h4>Currently making artful interfaces at <a href='http://sanctuary.computer/'>Sanctuary Computer</a>. Before that, I spent four years at <a href='http://drip.com/'>Drip.com</a> reinventing fan clubs for musicians. It was acquired by Kickstarter in April 2016.</h4>
-        </div>
+        <Banner status={'error'} />
       </div>
     );
   }

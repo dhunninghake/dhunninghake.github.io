@@ -1,23 +1,31 @@
-export const relative        = { position: 'relative' };
-export const absolute        = { position: 'absolute' };
-export const fixed           = { position: 'fixed', willChange: 'transform' };
+export default class Positioning {
+  constructor() {
+    this['relative']        = { position: 'relative' };
+    this['absolute']        = { position: 'absolute' };
+    this['fixed']           = { position: 'fixed', willChange: 'transform' };
 
-export const top0            = { top: '0px' };
-export const left0           = { left: '0px' };
-export const right0          = { right: '0px' };
-export const bottom0         = { bottom: '0px' };
+    this['top0']            = { top: '0px' };
+    this['left0']           = { left: '0px' };
+    this['right0']          = { right: '0px' };
+    this['bottom0']         = { bottom: '0px' };
 
-export const inline          = { display: 'inline' };
-export const block           = { display: 'block' };
-export const inlineBlock     = { display: 'inline-block' };
-export const tableRow        = { display: 'table-row' };
-export const tableCell       = { display: 'table-cell', verticalAlign: 'middle' };
-export const table           = { display: 'table', borderSpacing: '0px', width: '100%' };
+    this['inline']          = { display: 'inline' };
+    this['block']           = { display: 'block' };
+    this['inlineBlock']     = { display: 'inline-block' };
+    this['tableRow']        = { display: 'table-row' };
+    this['tableCell']       = { display: 'table-cell', verticalAlign: 'middle' };
+    this['table']           = { display: 'table', borderSpacing: '0px', width: '100%' };
 
-export const left            = { float: 'left' };
-export const right           = { float: 'right' };
+    this['left']            = { float: 'left' };
+    this['right']           = { float: 'right' };
 
-export const overflowAuto    = { overflow: 'auto' };
-export const overflowHidden  = { overflow: 'hidden' };
-export const overflowVisible = { overflow: 'visible' };
-export const overflowScroll  = { overflow: 'scroll' };
+    this['overflowAuto']    = { overflow: 'auto' };
+    this['overflowHidden']  = { overflow: 'hidden' };
+    this['overflowVisible'] = { overflow: 'visible' };
+    this['overflowScroll']  = { overflow: 'scroll' };
+
+    this['fullWidth']       = { width: '100%' };
+    this['fullHeight']      = { height: '100%' };
+    this['mxAuto']          = { marginLeft: 'auto', marginRight: 'auto' };
+  }
+}

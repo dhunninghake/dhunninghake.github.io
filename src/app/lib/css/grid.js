@@ -1,19 +1,30 @@
-const gridWidth = (columns) => {
-  return (columns/12 * 100) + '%';
-};
+import radon from '../../radon/radon';
+import { breakpoints } from './settings';
 
-export const col1  = { width: gridWidth(1) };
-export const col2  = { width: gridWidth(2) };
-export const col3  = { width: gridWidth(3) };
-export const col4  = { width: gridWidth(4) };
-export const col5  = { width: gridWidth(5) };
-export const col6  = { width: gridWidth(6) };
-export const col7  = { width: gridWidth(7) };
-export const col8  = { width: gridWidth(8) };
-export const col9  = { width: gridWidth(9) };
-export const col10 = { width: gridWidth(10) };
-export const col11 = { width: gridWidth(11) };
-export const col12 = { width: gridWidth(12) };
+export default class Grid {
+  constructor(maxWidth=1280, columns=12) {
+    this.maxWidth = maxWidth;
+    this.columns = columns;
+    
+    let i = 1;
+    while (i < this.columns) {
+      this['col' + i] = {width: this.calculateWidth(i)};
+      i++;
+    }
 
-export const fullWidth  = { width: '100%' };
-export const fullHeight = { height: '100%' };
+    Object.keys(breakpoints).forEach(breakpoint => {
+      let j = 1;
+      while (j < this.columns) {
+        let someObject = {};
+        someObject[breakpoint] = [{width: this.calculateWidth(j)}];
+        this[breakpoint + 'Col' + j] = radon(someObject);
+        j++;
+      }
+    });
+  }
+
+  calculateWidth(columnCount) {
+    return (columnCount / this.columns * 100) + '%';
+  }
+}
+

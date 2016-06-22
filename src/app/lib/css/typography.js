@@ -1,34 +1,32 @@
-const scale = [
-  '0.75rem',
-  '0.875rem',
-  '1rem',
-  '1.25rem',
-  '1.5rem',
-  '2rem',
-  '4rem',
-];
+export default class Typography {
+  constructor(unit=1) {
+    const scale = ['4', '2', '1.5', '1.25', '1', '0.875', '0.75'];
 
-export const h0          = { fontSize: scale[6] }
-export const h1          = { fontSize: scale[5] }
-export const h2          = { fontSize: scale[4] }
-export const h3          = { fontSize: scale[3] }
-export const h4          = { fontSize: scale[2] }
-export const h5          = { fontSize: scale[1] }
-export const h6          = { fontSize: scale[0] }
+    const newScale = scale.map(value => {
+      return value * unit + 'rem';
+    });
 
-export const center      = { textAlign: 'center' };
-export const leftAlign   = { textAlign: 'left' };
-export const rightAlign  = { textAlign: 'right' };
+    let i = 0;
+    while (i < newScale.length) {
+      this['h'+i] = { fontSize: newScale[i] };
+      i++;
+    }
 
-export const alignTop    = { verticalAlign: 'top' };
-export const alignMiddle = { verticalAlign: 'middle' };
-export const alignBottom = { verticalAlign: 'bottom' };
+    this['center']      = { textAlign: 'center' };
+    this['leftAlign']   = { textAlign: 'left' };
+    this['rightAlign']  = { textAlign: 'right' };
 
-export const italic      = { fontStyle: 'italic' };
-export const caps        = { textTransform: 'uppercase' };
-export const justify     = { textAlign: 'justify' };
-export const noWrap      = { whiteSpace: 'nowrap' };
-export const underline   = { textDecoration: 'underline' };
-export const noUnderline = { textDecoration: 'none' };
-export const trackedOut  = { letterSpacing: '0.1em' };
-export const listReset   = { listStyle: 'none', paddingLeft: '0px' };
+    this['alignTop']    = { verticalAlign: 'top' };
+    this['alignMiddle'] = { verticalAlign: 'middle' };
+    this['alignBottom'] = { verticalAlign: 'bottom' };
+
+    this['italic']      = { fontStyle: 'italic' };
+    this['caps']        = { textTransform: 'uppercase' };
+    this['justify']     = { textAlign: 'justify' };
+    this['noWrap']      = { whiteSpace: 'nowrap' };
+    this['underline']   = { textDecoration: 'underline' };
+    this['noUnderline'] = { textDecoration: 'none' };
+    this['trackedOut']  = { letterSpacing: '0.1em' };
+    this['listReset']   = { listStyle: 'none', paddingLeft: '0px' };
+  }
+}

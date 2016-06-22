@@ -3,22 +3,30 @@ const BREAKPOINTS = {
   large: '@media (min-width: 1040px)',
 };
 
-export default function otherside (atomics) {
-  
-  if (!atomics.small) { throw new Error('Hey, you need a small!'); }
+const PSEUDO = {
+  hover: ':hover',
+  active: ':active',
+  focus: ':focus'
+};
+
+export default function radon (atomics) {
 
   let radiumObject = {};
 
-  atomics.small.forEach(sm => {
-    for (let i in sm) {
-      radiumObject[i] = sm[i];
-    }
-  });
+  if (atomics.small) {
+    atomics.small.forEach(sm => {
+      for (let i in sm) {
+        radiumObject[i] = sm[i];
+      }
+    });
+  }
   
+  const AllSelectors = Object.assign({}, BREAKPOINTS, PSEUDO);
+
   Object.keys(atomics).filter(size => {
     return size !== 'small';
   }).forEach(size => {
-    if (!BREAKPOINTS[size]) {
+    if (!AllSelectors[size]) {
       throw new Error(size + ' has not been defined');
     } else {
       let mediaQueryObject = {};
@@ -27,7 +35,7 @@ export default function otherside (atomics) {
           mediaQueryObject[i] = atomic[i];
         }
       });
-      radiumObject[BREAKPOINTS[size]] = mediaQueryObject;
+      radiumObject[AllSelectors[size]] = mediaQueryObject;
     }
   });
 

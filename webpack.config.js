@@ -15,13 +15,16 @@ module.exports = {
         test: /\.jsx?$/,
         query: {
           presets: [
-            'es2015', 
-            'react'
-          ],
+            'babel-preset-es2015', 
+            'babel-preset-react',
+            'babel-preset-stage-0'
+          ].map(require.resolve),
           plugins: [
-            'transform-runtime',
-            'transform-decorators-legacy'
-          ]
+            'babel-plugin-transform-runtime',
+            'babel-plugin-transform-class-properties',
+            'babel-plugin-syntax-decorators',
+            'babel-plugin-transform-decorators-legacy'
+          ].map(require.resolve)
         }
       },
       { 
