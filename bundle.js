@@ -29829,19 +29829,23 @@
 
 	var _Banner2 = _interopRequireDefault(_Banner);
 
-	var _whitespace = __webpack_require__(388);
+	var _Footer = __webpack_require__(393);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
+	var _whitespace = __webpack_require__(387);
 
 	var _whitespace2 = _interopRequireDefault(_whitespace);
 
-	var _typography = __webpack_require__(392);
+	var _typography = __webpack_require__(388);
 
 	var _typography2 = _interopRequireDefault(_typography);
 
-	var _positioning = __webpack_require__(393);
+	var _positioning = __webpack_require__(389);
 
 	var _positioning2 = _interopRequireDefault(_positioning);
 
-	var _grid = __webpack_require__(389);
+	var _grid = __webpack_require__(390);
 
 	var _grid2 = _interopRequireDefault(_grid);
 
@@ -29856,7 +29860,7 @@
 	var pt4 = whitespace.pt4;
 
 
-	var grid = new _grid2.default(1280, 12);
+	var grid = new _grid2.default();
 	var mediumCol9 = grid.mediumCol9;
 	var largeCol10 = grid.largeCol10;
 
@@ -29868,11 +29872,6 @@
 	var overflowHidden = positioning.overflowHidden;
 	var left = positioning.left;
 	var mxAuto = positioning.mxAuto;
-
-
-	var container = (0, _radon2.default)({
-	  hover: [rightAlign]
-	});
 
 	var Home = (0, _radium2.default)(_class = function (_Component) {
 	  (0, _inherits3.default)(Home, _Component);
@@ -29887,7 +29886,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { style: [container, mediumCol9, largeCol10, mxAuto, pt4] },
+	        { style: [mediumCol9, largeCol10, mxAuto, pt4] },
 	        _react2.default.createElement(
 	          'header',
 	          { style: [table, fullWidth] },
@@ -29910,7 +29909,8 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(_Banner2.default, { status: 'error' })
+	        _react2.default.createElement(_Banner2.default, null),
+	        _react2.default.createElement(_Footer2.default, null)
 	      );
 	    }
 	  }]);
@@ -31643,53 +31643,66 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _Button = __webpack_require__(387);
+	var _radon = __webpack_require__(378);
 
-	var _Button2 = _interopRequireDefault(_Button);
+	var _radon2 = _interopRequireDefault(_radon);
 
-	var _whitespace = __webpack_require__(388);
+	var _whitespace = __webpack_require__(387);
 
 	var _whitespace2 = _interopRequireDefault(_whitespace);
 
-	var _typography = __webpack_require__(392);
+	var _typography = __webpack_require__(388);
 
 	var _typography2 = _interopRequireDefault(_typography);
 
-	var _grid = __webpack_require__(389);
+	var _positioning = __webpack_require__(389);
+
+	var _positioning2 = _interopRequireDefault(_positioning);
+
+	var _grid = __webpack_require__(390);
 
 	var _grid2 = _interopRequireDefault(_grid);
 
-	var _colors = __webpack_require__(391);
+	var _colors = __webpack_require__(392);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var grid = new _grid2.default(1280, 12);
+	var grid = new _grid2.default();
+	var col6 = grid.col6;
+	var col8 = grid.col8;
 	var col9 = grid.col9;
+	var col10 = grid.col10;
 
 
 	var whitespace = new _whitespace2.default();
+	var p2 = whitespace.p2;
 	var m0 = whitespace.m0;
 
 
 	var colors = new _colors2.default();
-	var green = colors.green;
-	var red = colors.red;
-	var yellow = colors.yellow;
-	var fuchsia = colors.fuchsia;
+	var black = colors.black;
+	var bgBlack = colors.bgBlack;
+	var white = colors.white;
 
 
 	var typography = new _typography2.default();
 	var h0 = typography.h0;
+	var center = typography.center;
+	var noUnderline = typography.noUnderline;
+
+
+	var positioning = new _positioning2.default();
+	var block = positioning.block;
 	var PropTypes = _react2.default.PropTypes;
 
 
-	var statusColor = {
-	  success: green,
-	  warning: yellow,
-	  error: red
-	};
+	var button = (0, _radon2.default)({
+	  small: [block, p2, bgBlack, white, col10, center, noUnderline],
+	  medium: [col8],
+	  large: [col6]
+	});
 
 	var Banner = (0, _radium2.default)(_class = function (_Component) {
 	  (0, _inherits3.default)(Banner, _Component);
@@ -31704,7 +31717,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { style: [fuchsia, col9, statusColor[this.props.status]] },
+	        { style: [col9] },
 	        _react2.default.createElement(
 	          'h1',
 	          { style: [h0, m0] },
@@ -31716,18 +31729,22 @@
 	          'Currently making artful interfaces at ',
 	          _react2.default.createElement(
 	            'a',
-	            { href: 'http://sanctuary.computer/' },
+	            { style: [black], href: 'http://sanctuary.computer/' },
 	            'Sanctuary Computer'
 	          ),
 	          '. Before that, I spent four years at ',
 	          _react2.default.createElement(
 	            'a',
-	            { href: 'http://drip.com/' },
+	            { style: [black], href: 'http://drip.com/' },
 	            'Drip.com'
 	          ),
 	          ' reinventing fan clubs for musicians. It was acquired by Kickstarter in April 2016.'
 	        ),
-	        _react2.default.createElement(_Button2.default, { text: 'Submit', size: 'wide' })
+	        _react2.default.createElement(
+	          'a',
+	          { style: [button], href: 'https://twitter.com/dhunninghake' },
+	          'Follow me on Twitter'
+	        )
 	      );
 	    }
 	  }]);
@@ -31741,127 +31758,6 @@
 
 /***/ },
 /* 387 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = undefined;
-
-	var _getPrototypeOf = __webpack_require__(292);
-
-	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-	var _classCallCheck2 = __webpack_require__(318);
-
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-	var _createClass2 = __webpack_require__(319);
-
-	var _createClass3 = _interopRequireDefault(_createClass2);
-
-	var _possibleConstructorReturn2 = __webpack_require__(323);
-
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-	var _inherits2 = __webpack_require__(370);
-
-	var _inherits3 = _interopRequireDefault(_inherits2);
-
-	var _class;
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _radium = __webpack_require__(231);
-
-	var _radium2 = _interopRequireDefault(_radium);
-
-	var _radon = __webpack_require__(378);
-
-	var _radon2 = _interopRequireDefault(_radon);
-
-	var _whitespace = __webpack_require__(388);
-
-	var _whitespace2 = _interopRequireDefault(_whitespace);
-
-	var _grid = __webpack_require__(389);
-
-	var _grid2 = _interopRequireDefault(_grid);
-
-	var _colors = __webpack_require__(391);
-
-	var _colors2 = _interopRequireDefault(_colors);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var grid = new _grid2.default(1280, 12);
-	var col2 = grid.col2;
-	var col4 = grid.col4;
-	var col7 = grid.col7;
-	var col10 = grid.col10;
-
-
-	var colors = new _colors2.default();
-	var bgBlack = colors.bgBlack;
-	var bgFuschia = colors.bgFuschia;
-	var bgGreen = colors.bgGreen;
-	var bgRed = colors.bgRed;
-	var white = colors.white;
-
-
-	var whitespace = new _whitespace2.default();
-	var p2 = whitespace.p2;
-	var PropTypes = _react2.default.PropTypes;
-
-
-	var button = {
-	  base: [{ border: '0px' }, p2, bgBlack, white, col2],
-	  thin: [col4],
-	  regular: [col7],
-	  wide: (0, _radon2.default)({
-	    small: [col10, bgFuschia],
-	    medium: [bgGreen],
-	    large: [bgRed, (0, _radon2.default)({
-	      hover: [bgBlack]
-	    })]
-	  })
-	};
-
-	console.log(button);
-
-	var Button = (0, _radium2.default)(_class = function (_Component) {
-	  (0, _inherits3.default)(Button, _Component);
-
-	  function Button() {
-	    (0, _classCallCheck3.default)(this, Button);
-	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Button).apply(this, arguments));
-	  }
-
-	  (0, _createClass3.default)(Button, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'button',
-	        { style: [button.base, button[this.props.size]] },
-	        this.props.text
-	      );
-	    }
-	  }]);
-	  return Button;
-	}(_react.Component)) || _class;
-
-	Button.propTypes = {
-	  text: PropTypes.string,
-	  size: PropTypes.string
-	};
-	exports.default = Button;
-
-/***/ },
-/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31907,151 +31803,7 @@
 	exports.default = Whitespace;
 
 /***/ },
-/* 389 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = undefined;
-
-	var _keys = __webpack_require__(379);
-
-	var _keys2 = _interopRequireDefault(_keys);
-
-	var _classCallCheck2 = __webpack_require__(318);
-
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-	var _createClass2 = __webpack_require__(319);
-
-	var _createClass3 = _interopRequireDefault(_createClass2);
-
-	var _radon = __webpack_require__(378);
-
-	var _radon2 = _interopRequireDefault(_radon);
-
-	var _settings = __webpack_require__(390);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Grid = function () {
-	  function Grid() {
-	    var _this = this;
-
-	    var maxWidth = arguments.length <= 0 || arguments[0] === undefined ? 1280 : arguments[0];
-	    var columns = arguments.length <= 1 || arguments[1] === undefined ? 12 : arguments[1];
-	    (0, _classCallCheck3.default)(this, Grid);
-
-	    this.maxWidth = maxWidth;
-	    this.columns = columns;
-
-	    var i = 1;
-	    while (i < this.columns) {
-	      this['col' + i] = { width: this.calculateWidth(i) };
-	      i++;
-	    }
-
-	    (0, _keys2.default)(_settings.breakpoints).forEach(function (breakpoint) {
-	      var j = 1;
-	      while (j < _this.columns) {
-	        var someObject = {};
-	        someObject[breakpoint] = [{ width: _this.calculateWidth(j) }];
-	        _this[breakpoint + 'Col' + j] = (0, _radon2.default)(someObject);
-	        j++;
-	      }
-	    });
-	  }
-
-	  (0, _createClass3.default)(Grid, [{
-	    key: 'calculateWidth',
-	    value: function calculateWidth(columnCount) {
-	      return columnCount / this.columns * 100 + '%';
-	    }
-	  }]);
-	  return Grid;
-	}();
-
-	exports.default = Grid;
-
-/***/ },
-/* 390 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var breakpoints = exports.breakpoints = {
-	  medium: '@media (min-width: 768px)',
-	  large: '@media (min-width: 1040px)'
-	};
-
-	var colors = exports.colors = {
-	  white: 'white',
-	  black: 'black',
-	  fuschia: 'fuchsia',
-	  green: 'green',
-	  red: 'red',
-	  yellow: 'yellow'
-	};
-
-/***/ },
-/* 391 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = undefined;
-
-	var _keys = __webpack_require__(379);
-
-	var _keys2 = _interopRequireDefault(_keys);
-
-	var _classCallCheck2 = __webpack_require__(318);
-
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-	var _createClass2 = __webpack_require__(319);
-
-	var _createClass3 = _interopRequireDefault(_createClass2);
-
-	var _settings = __webpack_require__(390);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Colors = function () {
-	  function Colors() {
-	    var _this = this;
-
-	    (0, _classCallCheck3.default)(this, Colors);
-
-	    (0, _keys2.default)(_settings.colors).forEach(function (color) {
-	      _this[color] = { color: _settings.colors[color] };
-	      _this['bg' + _this.capitalizeFirstLetter(color)] = { backgroundColor: _settings.colors[color] };
-	      _this['border' + _this.capitalizeFirstLetter(color)] = { borderColor: _settings.colors[color] };
-	    });
-	  }
-
-	  (0, _createClass3.default)(Colors, [{
-	    key: 'capitalizeFirstLetter',
-	    value: function capitalizeFirstLetter(color) {
-	      return color.charAt(0).toUpperCase() + color.slice(1);
-	    }
-	  }]);
-	  return Colors;
-	}();
-
-	exports.default = Colors;
-
-/***/ },
-/* 392 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32104,7 +31856,7 @@
 	exports.default = Typography;
 
 /***/ },
-/* 393 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32153,6 +31905,245 @@
 	};
 
 	exports.default = Positioning;
+
+/***/ },
+/* 390 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _keys = __webpack_require__(379);
+
+	var _keys2 = _interopRequireDefault(_keys);
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(319);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _radon = __webpack_require__(378);
+
+	var _radon2 = _interopRequireDefault(_radon);
+
+	var _settings = __webpack_require__(391);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Grid = function () {
+	  function Grid() {
+	    var _this = this;
+
+	    var maxWidth = arguments.length <= 0 || arguments[0] === undefined ? 1280 : arguments[0];
+	    var columns = arguments.length <= 1 || arguments[1] === undefined ? 12 : arguments[1];
+	    (0, _classCallCheck3.default)(this, Grid);
+
+	    this.maxWidth = maxWidth;
+	    this.columns = columns;
+
+	    var i = 1;
+	    while (i < this.columns) {
+	      this['col' + i] = { width: this.calculateWidth(i) };
+	      i++;
+	    }
+
+	    (0, _keys2.default)(_settings.breakpoints).forEach(function (breakpoint) {
+	      var j = 1;
+	      while (j < _this.columns) {
+	        var someObject = {};
+	        someObject[breakpoint] = [{ width: _this.calculateWidth(j) }];
+	        _this[breakpoint + 'Col' + j] = (0, _radon2.default)(someObject);
+	        j++;
+	      }
+	    });
+	  }
+
+	  (0, _createClass3.default)(Grid, [{
+	    key: 'calculateWidth',
+	    value: function calculateWidth(columnCount) {
+	      return columnCount / this.columns * 100 + '%';
+	    }
+	  }]);
+	  return Grid;
+	}();
+
+	exports.default = Grid;
+
+/***/ },
+/* 391 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var breakpoints = exports.breakpoints = {
+	  medium: '@media (min-width: 768px)',
+	  large: '@media (min-width: 1040px)'
+	};
+
+	var colors = exports.colors = {
+	  white: 'white',
+	  black: 'black',
+	  fuschia: 'fuchsia',
+	  green: 'green',
+	  red: 'red',
+	  yellow: 'yellow'
+	};
+
+/***/ },
+/* 392 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _keys = __webpack_require__(379);
+
+	var _keys2 = _interopRequireDefault(_keys);
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(319);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _settings = __webpack_require__(391);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Colors = function () {
+	  function Colors() {
+	    var _this = this;
+
+	    (0, _classCallCheck3.default)(this, Colors);
+
+	    (0, _keys2.default)(_settings.colors).forEach(function (color) {
+	      _this[color] = { color: _settings.colors[color] };
+	      _this['bg' + _this.capitalizeFirstLetter(color)] = { backgroundColor: _settings.colors[color] };
+	      _this['border' + _this.capitalizeFirstLetter(color)] = { borderColor: _settings.colors[color] };
+	    });
+	  }
+
+	  (0, _createClass3.default)(Colors, [{
+	    key: 'capitalizeFirstLetter',
+	    value: function capitalizeFirstLetter(color) {
+	      return color.charAt(0).toUpperCase() + color.slice(1);
+	    }
+	  }]);
+	  return Colors;
+	}();
+
+	exports.default = Colors;
+
+/***/ },
+/* 393 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _getPrototypeOf = __webpack_require__(292);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(319);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(323);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(370);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _class;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _radium = __webpack_require__(231);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	var _whitespace = __webpack_require__(387);
+
+	var _whitespace2 = _interopRequireDefault(_whitespace);
+
+	var _colors = __webpack_require__(392);
+
+	var _colors2 = _interopRequireDefault(_colors);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var colors = new _colors2.default();
+	var black = colors.black;
+
+
+	var whitespace = new _whitespace2.default();
+	var pt4 = whitespace.pt4;
+
+	var Footer = (0, _radium2.default)(_class = function (_Component) {
+	  (0, _inherits3.default)(Footer, _Component);
+
+	  function Footer() {
+	    (0, _classCallCheck3.default)(this, Footer);
+	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Footer).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(Footer, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { style: [pt4] },
+	        'Currently working on ',
+	        _react2.default.createElement(
+	          'a',
+	          { style: [black], href: 'https://github.com/sanctuarycomputer/radon' },
+	          'Radon'
+	        ),
+	        ', an open source way to use responsive atomic styles with React.',
+	        _react2.default.createElement('br', null),
+	        'This site is an experiment with it, check out the code ',
+	        _react2.default.createElement(
+	          'a',
+	          { style: [black], href: 'https://github.com/dhunninghake/dhunninghake.github.io' },
+	          'here'
+	        ),
+	        '.'
+	      );
+	    }
+	  }]);
+	  return Footer;
+	}(_react.Component)) || _class;
+
+	exports.default = Footer;
 
 /***/ }
 /******/ ]);

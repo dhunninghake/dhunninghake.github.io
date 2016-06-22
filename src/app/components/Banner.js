@@ -1,30 +1,34 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
-import Button from '../components/Button';
+import radon from '../radon/radon';
 import Whitespace from '../lib/css/whitespace';
 import Typography from '../lib/css/typography';
+import Positioning from '../lib/css/positioning';
 import Grid from '../lib/css/grid';
 import Colors from '../lib/css/colors';
 
-const grid = new Grid(1280, 12);
-const { col9 } = grid;
+const grid = new Grid();
+const { col6, col8, col9, col10 } = grid;
 
 const whitespace = new Whitespace();
-const { m0 } = whitespace;
+const { p2, m0 } = whitespace;
 
 const colors = new Colors();
-const { green, red, yellow, fuchsia } = colors;
+const { black, bgBlack, white } = colors;
 
 const typography = new Typography();
-const { h0 } = typography;
+const { h0, center, noUnderline } = typography;
+
+const positioning = new Positioning();
+const { block } = positioning;
 
 const { PropTypes } = React;
 
-const statusColor = {
-  success: green,
-  warning: yellow,
-  error:   red,
-};
+const button = radon({
+  small:  [block, p2, bgBlack, white, col10, center, noUnderline],
+  medium: [col8],
+  large:  [col6],
+});
 
 @Radium
 export default class Banner extends Component {
@@ -35,10 +39,10 @@ export default class Banner extends Component {
 
   render() {
     return (
-      <div style={[fuchsia, col9, statusColor[this.props.status]]}>
+      <div style={[col9]}>
         <h1 style={[h0, m0]}>I’m a product designer and developer hustling to bring ideas to life.</h1>
-        <h4>Currently making artful interfaces at <a href='http://sanctuary.computer/'>Sanctuary Computer</a>. Before that, I spent four years at <a href='http://drip.com/'>Drip.com</a> reinventing fan clubs for musicians. It was acquired by Kickstarter in April 2016.</h4>
-        <Button text={'Submit'} size={'wide'} />
+        <h4>Currently making artful interfaces at <a style={[black]} href='http://sanctuary.computer/'>Sanctuary Computer</a>. Before that, I spent four years at <a style={[black]} href='http://drip.com/'>Drip.com</a> reinventing fan clubs for musicians. It was acquired by Kickstarter in April 2016.</h4>
+        <a style={[button]} href='https://twitter.com/dhunninghake'>Follow me on Twitter</a>
       </div>
     );
   }
