@@ -1,5 +1,5 @@
 import radon from '../../radon/radon';
-import { breakpoints } from './settings';
+import { radiumSelectors } from './settings';
 
 export default class Grid {
   constructor(maxWidth=1280, columns=12) {
@@ -12,7 +12,7 @@ export default class Grid {
       i++;
     }
 
-    Object.keys(breakpoints).forEach(breakpoint => {
+    Object.keys(radiumSelectors.breakpoints).forEach(breakpoint => {
       let j = 1;
       while (j < this.columns) {
         let someObject = {};

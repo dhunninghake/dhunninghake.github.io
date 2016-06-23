@@ -1,6 +1,13 @@
-export const breakpoints = {
-  medium: '@media (min-width: 768px)',
-  large: '@media (min-width: 1040px)',
+export const radiumSelectors = {
+  pseudo: {
+    hover: ':hover',
+    active: ':active',
+    focus: ':focus'
+  },
+  breakpoints: {
+    medium: '@media (min-width: 768px)',
+    large: '@media (min-width: 1040px)',
+  }
 };
 
 export const colors = {

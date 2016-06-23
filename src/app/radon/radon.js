@@ -1,13 +1,4 @@
-const BREAKPOINTS = {
-  medium: '@media (min-width: 768px)',
-  large: '@media (min-width: 1040px)',
-};
-
-const PSEUDO = {
-  hover: ':hover',
-  active: ':active',
-  focus: ':focus'
-};
+import { radiumSelectors } from '../lib/css/settings';
 
 export default function radon (atomics) {
 
@@ -21,7 +12,7 @@ export default function radon (atomics) {
     });
   }
   
-  const AllSelectors = Object.assign({}, BREAKPOINTS, PSEUDO);
+  const AllSelectors = Object.assign({}, radiumSelectors.breakpoints, radiumSelectors.pseudo);
 
   Object.keys(atomics).filter(size => {
     return size !== 'small';

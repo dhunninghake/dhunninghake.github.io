@@ -29825,7 +29825,7 @@
 
 	var _radon2 = _interopRequireDefault(_radon);
 
-	var _Banner = __webpack_require__(386);
+	var _Banner = __webpack_require__(387);
 
 	var _Banner2 = _interopRequireDefault(_Banner);
 
@@ -29833,45 +29833,45 @@
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
-	var _whitespace = __webpack_require__(387);
+	var _whitespace = __webpack_require__(388);
 
 	var _whitespace2 = _interopRequireDefault(_whitespace);
 
-	var _typography = __webpack_require__(388);
+	var _typography = __webpack_require__(389);
 
 	var _typography2 = _interopRequireDefault(_typography);
 
-	var _positioning = __webpack_require__(389);
+	var _positioning = __webpack_require__(390);
 
 	var _positioning2 = _interopRequireDefault(_positioning);
 
-	var _grid = __webpack_require__(390);
+	var _grid = __webpack_require__(391);
 
 	var _grid2 = _interopRequireDefault(_grid);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var typography = new _typography2.default();
-	var center = typography.center;
-	var rightAlign = typography.rightAlign;
+	var t = new _typography2.default();
+	var center = t.center;
+	var rightAlign = t.rightAlign;
 
 
-	var whitespace = new _whitespace2.default();
-	var pt4 = whitespace.pt4;
+	var w = new _whitespace2.default();
+	var pt4 = w.pt4;
 
 
-	var grid = new _grid2.default();
-	var mediumCol9 = grid.mediumCol9;
-	var largeCol10 = grid.largeCol10;
+	var g = new _grid2.default();
+	var mediumCol9 = g.mediumCol9;
+	var largeCol10 = g.largeCol10;
 
 
-	var positioning = new _positioning2.default();
-	var table = positioning.table;
-	var tableCell = positioning.tableCell;
-	var fullWidth = positioning.fullWidth;
-	var overflowHidden = positioning.overflowHidden;
-	var left = positioning.left;
-	var mxAuto = positioning.mxAuto;
+	var p = new _positioning2.default();
+	var table = p.table;
+	var tableCell = p.tableCell;
+	var fullWidth = p.fullWidth;
+	var overflowHidden = p.overflowHidden;
+	var left = p.left;
+	var mxAuto = p.mxAuto;
 
 	var Home = (0, _radium2.default)(_class = function (_Component) {
 	  (0, _inherits3.default)(Home, _Component);
@@ -29892,7 +29892,7 @@
 	          { style: [table, fullWidth] },
 	          _react2.default.createElement(
 	            'div',
-	            { style: [tableCell] },
+	            { style: [tableCell, center] },
 	            _react2.default.createElement(
 	              'h1',
 	              null,
@@ -31467,18 +31467,9 @@
 
 	exports.default = radon;
 
+	var _settings = __webpack_require__(386);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var BREAKPOINTS = {
-	  medium: '@media (min-width: 768px)',
-	  large: '@media (min-width: 1040px)'
-	};
-
-	var PSEUDO = {
-	  hover: ':hover',
-	  active: ':active',
-	  focus: ':focus'
-	};
 
 	function radon(atomics) {
 
@@ -31492,7 +31483,7 @@
 	    });
 	  }
 
-	  var AllSelectors = (0, _assign2.default)({}, BREAKPOINTS, PSEUDO);
+	  var AllSelectors = (0, _assign2.default)({}, _settings.radiumSelectors.breakpoints, _settings.radiumSelectors.pseudo);
 
 	  (0, _keys2.default)(atomics).filter(function (size) {
 	    return size !== 'small';
@@ -31604,6 +31595,36 @@
 
 /***/ },
 /* 386 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var radiumSelectors = exports.radiumSelectors = {
+	  pseudo: {
+	    hover: ':hover',
+	    active: ':active',
+	    focus: ':focus'
+	  },
+	  breakpoints: {
+	    medium: '@media (min-width: 768px)',
+	    large: '@media (min-width: 1040px)'
+	  }
+	};
+
+	var colors = exports.colors = {
+	  white: 'white',
+	  black: 'black',
+	  fuschia: 'fuchsia',
+	  green: 'green',
+	  red: 'red',
+	  yellow: 'yellow'
+	};
+
+/***/ },
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31647,19 +31668,19 @@
 
 	var _radon2 = _interopRequireDefault(_radon);
 
-	var _whitespace = __webpack_require__(387);
+	var _whitespace = __webpack_require__(388);
 
 	var _whitespace2 = _interopRequireDefault(_whitespace);
 
-	var _typography = __webpack_require__(388);
+	var _typography = __webpack_require__(389);
 
 	var _typography2 = _interopRequireDefault(_typography);
 
-	var _positioning = __webpack_require__(389);
+	var _positioning = __webpack_require__(390);
 
 	var _positioning2 = _interopRequireDefault(_positioning);
 
-	var _grid = __webpack_require__(390);
+	var _grid = __webpack_require__(391);
 
 	var _grid2 = _interopRequireDefault(_grid);
 
@@ -31757,7 +31778,7 @@
 	exports.default = Banner;
 
 /***/ },
-/* 387 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31803,7 +31824,7 @@
 	exports.default = Whitespace;
 
 /***/ },
-/* 388 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31856,7 +31877,7 @@
 	exports.default = Typography;
 
 /***/ },
-/* 389 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31907,7 +31928,7 @@
 	exports.default = Positioning;
 
 /***/ },
-/* 390 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31933,7 +31954,7 @@
 
 	var _radon2 = _interopRequireDefault(_radon);
 
-	var _settings = __webpack_require__(391);
+	var _settings = __webpack_require__(386);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31954,7 +31975,7 @@
 	      i++;
 	    }
 
-	    (0, _keys2.default)(_settings.breakpoints).forEach(function (breakpoint) {
+	    (0, _keys2.default)(_settings.radiumSelectors.breakpoints).forEach(function (breakpoint) {
 	      var j = 1;
 	      while (j < _this.columns) {
 	        var someObject = {};
@@ -31975,29 +31996,6 @@
 	}();
 
 	exports.default = Grid;
-
-/***/ },
-/* 391 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var breakpoints = exports.breakpoints = {
-	  medium: '@media (min-width: 768px)',
-	  large: '@media (min-width: 1040px)'
-	};
-
-	var colors = exports.colors = {
-	  white: 'white',
-	  black: 'black',
-	  fuschia: 'fuchsia',
-	  green: 'green',
-	  red: 'red',
-	  yellow: 'yellow'
-	};
 
 /***/ },
 /* 392 */
@@ -32022,7 +32020,7 @@
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
 
-	var _settings = __webpack_require__(391);
+	var _settings = __webpack_require__(386);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32034,14 +32032,14 @@
 
 	    (0, _keys2.default)(_settings.colors).forEach(function (color) {
 	      _this[color] = { color: _settings.colors[color] };
-	      _this['bg' + _this.capitalizeFirstLetter(color)] = { backgroundColor: _settings.colors[color] };
-	      _this['border' + _this.capitalizeFirstLetter(color)] = { borderColor: _settings.colors[color] };
+	      _this['bg' + _this.capFirstLetter(color)] = { backgroundColor: _settings.colors[color] };
+	      _this['border' + _this.capFirstLetter(color)] = { borderColor: _settings.colors[color] };
 	    });
 	  }
 
 	  (0, _createClass3.default)(Colors, [{
-	    key: 'capitalizeFirstLetter',
-	    value: function capitalizeFirstLetter(color) {
+	    key: 'capFirstLetter',
+	    value: function capFirstLetter(color) {
 	      return color.charAt(0).toUpperCase() + color.slice(1);
 	    }
 	  }]);
@@ -32091,7 +32089,7 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _whitespace = __webpack_require__(387);
+	var _whitespace = __webpack_require__(388);
 
 	var _whitespace2 = _interopRequireDefault(_whitespace);
 

@@ -8,17 +8,17 @@ import Typography from '../lib/css/typography';
 import Positioning from '../lib/css/positioning';
 import Grid from '../lib/css/grid';
 
-const typography = new Typography();
-const { center, rightAlign } = typography;
+const t = new Typography();
+const { center, rightAlign } = t;
 
-const whitespace = new Whitespace();
-const { pt4 } = whitespace;
+const w = new Whitespace();
+const { pt4 } = w;
 
-const grid = new Grid();
-const { mediumCol9, largeCol10 } = grid;
+const g = new Grid();
+const { mediumCol9, largeCol10 } = g;
 
-const positioning = new Positioning();
-const { table, tableCell, fullWidth, overflowHidden, left, mxAuto } = positioning;
+const p = new Positioning();
+const { table, tableCell, fullWidth, overflowHidden, left, mxAuto } = p;
 
 @Radium
 export default class Home extends Component {
@@ -26,7 +26,7 @@ export default class Home extends Component {
     return (
       <div style={[mediumCol9, largeCol10, mxAuto, pt4]}>
         <header style={[table, fullWidth]}>
-          <div style={[tableCell]}>
+          <div style={[tableCell, center]}>
             <h1>Daniel Hunninghake</h1>
           </div>
           <div style={[tableCell, rightAlign]}>
