@@ -29825,11 +29825,15 @@
 
 	var _radon2 = _interopRequireDefault(_radon);
 
-	var _Banner = __webpack_require__(387);
+	var _Header = __webpack_require__(387);
+
+	var _Header2 = _interopRequireDefault(_Header);
+
+	var _Banner = __webpack_require__(391);
 
 	var _Banner2 = _interopRequireDefault(_Banner);
 
-	var _Footer = __webpack_require__(393);
+	var _Footer = __webpack_require__(395);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -29837,24 +29841,15 @@
 
 	var _whitespace2 = _interopRequireDefault(_whitespace);
 
-	var _typography = __webpack_require__(389);
-
-	var _typography2 = _interopRequireDefault(_typography);
-
 	var _positioning = __webpack_require__(390);
 
 	var _positioning2 = _interopRequireDefault(_positioning);
 
-	var _grid = __webpack_require__(391);
+	var _grid = __webpack_require__(392);
 
 	var _grid2 = _interopRequireDefault(_grid);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var t = new _typography2.default();
-	var center = t.center;
-	var rightAlign = t.rightAlign;
-
 
 	var w = new _whitespace2.default();
 	var pt4 = w.pt4;
@@ -29866,11 +29861,6 @@
 
 
 	var p = new _positioning2.default();
-	var table = p.table;
-	var tableCell = p.tableCell;
-	var fullWidth = p.fullWidth;
-	var overflowHidden = p.overflowHidden;
-	var left = p.left;
 	var mxAuto = p.mxAuto;
 
 	var Home = (0, _radium2.default)(_class = function (_Component) {
@@ -29887,28 +29877,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { style: [mediumCol9, largeCol10, mxAuto, pt4] },
-	        _react2.default.createElement(
-	          'header',
-	          { style: [table, fullWidth] },
-	          _react2.default.createElement(
-	            'div',
-	            { style: [tableCell, center] },
-	            _react2.default.createElement(
-	              'h1',
-	              null,
-	              'Daniel Hunninghake'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { style: [tableCell, rightAlign] },
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              '✌'
-	            )
-	          )
-	        ),
+	        _react2.default.createElement(_Header2.default, null),
 	        _react2.default.createElement(_Banner2.default, null),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
@@ -31664,10 +31633,6 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _radon = __webpack_require__(378);
-
-	var _radon2 = _interopRequireDefault(_radon);
-
 	var _whitespace = __webpack_require__(388);
 
 	var _whitespace2 = _interopRequireDefault(_whitespace);
@@ -31680,102 +31645,60 @@
 
 	var _positioning2 = _interopRequireDefault(_positioning);
 
-	var _grid = __webpack_require__(391);
-
-	var _grid2 = _interopRequireDefault(_grid);
-
-	var _colors = __webpack_require__(392);
-
-	var _colors2 = _interopRequireDefault(_colors);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var grid = new _grid2.default();
-	var col6 = grid.col6;
-	var col8 = grid.col8;
-	var col9 = grid.col9;
-	var col10 = grid.col10;
+	var t = new _typography2.default();
+	var rightAlign = t.rightAlign;
 
 
-	var whitespace = new _whitespace2.default();
-	var p2 = whitespace.p2;
-	var m0 = whitespace.m0;
+	var w = new _whitespace2.default();
+	var pt4 = w.pt4;
 
 
-	var colors = new _colors2.default();
-	var black = colors.black;
-	var bgBlack = colors.bgBlack;
-	var white = colors.white;
+	var p = new _positioning2.default();
+	var table = p.table;
+	var tableCell = p.tableCell;
+	var fullWidth = p.fullWidth;
 
+	var Footer = (0, _radium2.default)(_class = function (_Component) {
+	  (0, _inherits3.default)(Footer, _Component);
 
-	var typography = new _typography2.default();
-	var h0 = typography.h0;
-	var center = typography.center;
-	var noUnderline = typography.noUnderline;
-
-
-	var positioning = new _positioning2.default();
-	var block = positioning.block;
-	var PropTypes = _react2.default.PropTypes;
-
-
-	var button = (0, _radon2.default)({
-	  small: [block, p2, bgBlack, white, col10, center, noUnderline],
-	  medium: [col8],
-	  large: [col6]
-	});
-
-	var Banner = (0, _radium2.default)(_class = function (_Component) {
-	  (0, _inherits3.default)(Banner, _Component);
-
-	  function Banner() {
-	    (0, _classCallCheck3.default)(this, Banner);
-	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Banner).apply(this, arguments));
+	  function Footer() {
+	    (0, _classCallCheck3.default)(this, Footer);
+	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Footer).apply(this, arguments));
 	  }
 
-	  (0, _createClass3.default)(Banner, [{
+	  (0, _createClass3.default)(Footer, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
-	        { style: [col9] },
+	        'header',
+	        { style: [table, fullWidth] },
 	        _react2.default.createElement(
-	          'h1',
-	          { style: [h0, m0] },
-	          'I’m a product designer and developer hustling to bring ideas to life.'
+	          'div',
+	          { style: [tableCell] },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Daniel Hunninghake'
+	          )
 	        ),
 	        _react2.default.createElement(
-	          'h4',
-	          null,
-	          'Currently making artful interfaces at ',
+	          'div',
+	          { style: [tableCell, rightAlign] },
 	          _react2.default.createElement(
-	            'a',
-	            { style: [black], href: 'http://sanctuary.computer/' },
-	            'Sanctuary Computer'
-	          ),
-	          '. Before that, I spent four years at ',
-	          _react2.default.createElement(
-	            'a',
-	            { style: [black], href: 'http://drip.com/' },
-	            'Drip.com'
-	          ),
-	          ' reinventing fan clubs for musicians. It was acquired by Kickstarter in April 2016.'
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { style: [button], href: 'https://twitter.com/dhunninghake' },
-	          'Follow me on Twitter'
+	            'p',
+	            null,
+	            '✌'
+	          )
 	        )
 	      );
 	    }
 	  }]);
-	  return Banner;
+	  return Footer;
 	}(_react.Component)) || _class;
 
-	Banner.propTypes = {
-	  status: PropTypes.string
-	};
-	exports.default = Banner;
+	exports.default = Footer;
 
 /***/ },
 /* 388 */
@@ -31938,6 +31861,157 @@
 	});
 	exports.default = undefined;
 
+	var _getPrototypeOf = __webpack_require__(292);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(319);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(323);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(370);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _class;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _radium = __webpack_require__(231);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	var _radon = __webpack_require__(378);
+
+	var _radon2 = _interopRequireDefault(_radon);
+
+	var _whitespace = __webpack_require__(388);
+
+	var _whitespace2 = _interopRequireDefault(_whitespace);
+
+	var _typography = __webpack_require__(389);
+
+	var _typography2 = _interopRequireDefault(_typography);
+
+	var _positioning = __webpack_require__(390);
+
+	var _positioning2 = _interopRequireDefault(_positioning);
+
+	var _grid = __webpack_require__(392);
+
+	var _grid2 = _interopRequireDefault(_grid);
+
+	var _colors = __webpack_require__(393);
+
+	var _colors2 = _interopRequireDefault(_colors);
+
+	var _buttons = __webpack_require__(394);
+
+	var _buttons2 = _interopRequireDefault(_buttons);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var grid = new _grid2.default();
+	var col6 = grid.col6;
+	var col8 = grid.col8;
+	var col9 = grid.col9;
+	var col10 = grid.col10;
+
+
+	var whitespace = new _whitespace2.default();
+	var p2 = whitespace.p2;
+	var m0 = whitespace.m0;
+
+
+	var colors = new _colors2.default();
+	var black = colors.black;
+
+
+	var typography = new _typography2.default();
+	var h0 = typography.h0;
+	var center = typography.center;
+	var noUnderline = typography.noUnderline;
+
+
+	var positioning = new _positioning2.default();
+	var block = positioning.block;
+
+
+	var button = new _buttons2.default();
+
+	var Banner = (0, _radium2.default)(_class = function (_Component) {
+	  (0, _inherits3.default)(Banner, _Component);
+
+	  function Banner() {
+	    (0, _classCallCheck3.default)(this, Banner);
+	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Banner).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(Banner, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { style: [col9] },
+	        _react2.default.createElement(
+	          'h1',
+	          { style: [h0, m0] },
+	          'I’m a product designer and developer hustling to bring ideas to life.'
+	        ),
+	        _react2.default.createElement(
+	          'h4',
+	          null,
+	          'Currently making artful interfaces at ',
+	          _react2.default.createElement(
+	            'a',
+	            { style: [black], href: 'http://sanctuary.computer/' },
+	            'Sanctuary Computer'
+	          ),
+	          '. Before that, I spent four years at ',
+	          _react2.default.createElement(
+	            'a',
+	            { style: [black], href: 'http://drip.com/' },
+	            'Drip.com'
+	          ),
+	          ' reinventing fan clubs for musicians. It was acquired by Kickstarter in April 2016.'
+	        ),
+	        _react2.default.createElement(
+	          'a',
+	          { style: [button], href: 'https://twitter.com/dhunninghake' },
+	          'Follow me on Twitter'
+	        )
+	      );
+	    }
+	  }]);
+	  return Banner;
+	}(_react.Component)) || _class;
+
+	Banner.propTypes = {
+	  status: _react.PropTypes.string
+	};
+	exports.default = Banner;
+
+/***/ },
+/* 392 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
 	var _keys = __webpack_require__(379);
 
 	var _keys2 = _interopRequireDefault(_keys);
@@ -31998,7 +32072,7 @@
 	exports.default = Grid;
 
 /***/ },
-/* 392 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32049,7 +32123,91 @@
 	exports.default = Colors;
 
 /***/ },
-/* 393 */
+/* 394 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _classCallCheck2 = __webpack_require__(318);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(319);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _radon = __webpack_require__(378);
+
+	var _radon2 = _interopRequireDefault(_radon);
+
+	var _settings = __webpack_require__(386);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Button = function () {
+	  function Button() {
+	    var color = arguments.length <= 0 || arguments[0] === undefined ? 'black' : arguments[0];
+	    var size = arguments.length <= 1 || arguments[1] === undefined ? 'medium' : arguments[1];
+	    (0, _classCallCheck3.default)(this, Button);
+
+	    this['fontFamily'] = 'inherit';
+	    this['fontSize'] = 'inherit';
+	    this['textDecoration'] = 'none';
+	    this['cursor'] = 'pointer';
+	    this['display'] = 'inline-block';
+	    this['borderRadius'] = '999rem';
+	    this['verticalAlign'] = 'middle';
+	    this['appearance'] = 'none';
+	    this['height'] = 'auto';
+	    this['backgroundColor'] = _settings.colors[color];
+	    this['color'] = _settings.colors['white'];
+	    this['margin'] = 0;
+	    this['border'] = 0;
+	    this['opacity'] = 1;
+	    this['padding'] = this.handleSizing(size).padding;
+	    this['lineHeight'] = this.handleSizing(size).lineHeight;
+	    this['transition'] = 'all .15s ease';
+	    this[':hover'] = { opacity: '.75' };
+	    this[':focus'] = { boxShadow: '0 0 0 3px rgba(0,0,0,.3)', outline: 'none' };
+	  }
+
+	  (0, _createClass3.default)(Button, [{
+	    key: 'handleSizing',
+	    value: function handleSizing(size) {
+	      switch (size) {
+	        case 'large':
+	          return {
+	            padding: '1.5rem',
+	            lineHeight: '1.5rem'
+	          };
+	          break;
+	        case 'small':
+	          return {
+	            padding: '.75rem',
+	            lineHeight: '.75rem'
+	          };
+	          break;
+	        default:
+	          return {
+	            padding: '1rem',
+	            lineHeight: '1rem'
+	          };
+	          break;
+	      }
+	    }
+	  }]);
+	  return Button;
+	}();
+
+	exports.default = Button;
+
+/***/ },
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32093,7 +32251,7 @@
 
 	var _whitespace2 = _interopRequireDefault(_whitespace);
 
-	var _colors = __webpack_require__(392);
+	var _colors = __webpack_require__(393);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
