@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import radon from '../radon/radon';
 import Whitespace from '../lib/css/whitespace';
@@ -6,6 +6,7 @@ import Typography from '../lib/css/typography';
 import Positioning from '../lib/css/positioning';
 import Grid from '../lib/css/grid';
 import Colors from '../lib/css/colors';
+import Button from '../lib/css/buttons';
 
 const grid = new Grid();
 const { col6, col8, col9, col10 } = grid;
@@ -14,7 +15,7 @@ const whitespace = new Whitespace();
 const { p2, m0 } = whitespace;
 
 const colors = new Colors();
-const { black, bgBlack, white } = colors;
+const { black } = colors;
 
 const typography = new Typography();
 const { h0, center, noUnderline } = typography;
@@ -22,13 +23,7 @@ const { h0, center, noUnderline } = typography;
 const positioning = new Positioning();
 const { block } = positioning;
 
-const { PropTypes } = React;
-
-const button = radon({
-  small:  [block, p2, bgBlack, white, col10, center, noUnderline],
-  medium: [col8],
-  large:  [col6],
-});
+const button = new Button();
 
 @Radium
 export default class Banner extends Component {
