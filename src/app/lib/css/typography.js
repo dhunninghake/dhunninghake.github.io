@@ -1,5 +1,5 @@
 export default class Typography {
-  constructor(unit=1) {
+  constructor(webfonts=[], unit=1) {
     const scale = ['4', '2', '1.5', '1.25', '1', '0.875', '0.75'];
 
     const newScale = scale.map(value => {
@@ -11,6 +11,10 @@ export default class Typography {
       this['h'+i] = { fontSize: newScale[i] };
       i++;
     }
+
+    webfonts.forEach(font => {
+      this[font] = { fontFamily: "'" + font + "', 'Helvetica Neue', Helvetica, sans-serif" }
+    });
 
     this['center']      = { textAlign: 'center' };
     this['leftAlign']   = { textAlign: 'left' };

@@ -28,10 +28,14 @@ module.exports = {
           ].map(require.resolve)
         }
       },
-      { 
-        test: /\.(png|jpg|jpeg|gif|woff)$/, 
-        loader: 'url-loader?limit=1000000'
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000'
       },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      }
     ]
   },
   plugins: [

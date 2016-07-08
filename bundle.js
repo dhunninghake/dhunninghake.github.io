@@ -60,6 +60,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./app/fonts/calibre.scss\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.browserHistory },
