@@ -14,28 +14,16 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         test: /\.jsx?$/,
-        query: {
-          presets: [
-            'babel-preset-es2015', 
-            'babel-preset-react',
-            'babel-preset-stage-0'
-          ].map(require.resolve),
-          plugins: [
-            'babel-plugin-transform-runtime',
-            'babel-plugin-transform-class-properties',
-            'babel-plugin-syntax-decorators',
-            'babel-plugin-transform-decorators-legacy'
-          ].map(require.resolve)
-        }
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader?limit=100000'
       },
-      {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      }
+      { 
+        test: /\.css$/, 
+        exclude: /\.useable\.css$/, 
+        loader: "style!css" 
+      },
     ]
   },
   plugins: [

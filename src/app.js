@@ -1,12 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
+import App from './components/App';
 
-import { browserHistory, Router } from 'react-router';
-import Routes from './app/config/Router';
-
-require('./app/fonts/calibre.scss');
+require('./fonts/calibre.css');
 
 render(
-  <Router history={browserHistory}>{Routes}</Router>,
+  <App />,
   document.getElementById('app')
 );
