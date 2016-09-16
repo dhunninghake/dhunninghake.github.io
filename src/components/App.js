@@ -7,15 +7,16 @@ export default class Home extends Component {
     const styles = v({
       container: {
         width: '100%',
-        height: '100vh',
         display: 'table',
-        fontFamily: "'CalibreRegular', sans-serif"
+        height: 'calc(100vh - 2rem)',
+        fontFamily: "'CalibreRegular', sans-serif",
+        transition: 'all 1s ease',
       },
       cell: {
         display: 'table-cell',
         verticalAlign: 'middle',
+        paddingBottom: '4rem',
         textAlign: 'center',
-        paddingBottom: '3rem'
       },
       header: {
         margin: '0rem',
@@ -27,7 +28,7 @@ export default class Home extends Component {
       }
     });
     return (
-      <div className={styles.container} onClick={this.changeBg}>
+      <div className={styles.container}>
         <div className={styles.cell}>
           <Icon name='grinning' width={42} />
           <h1 className={styles.header}>{'Daniel Hunninghake'}</h1>

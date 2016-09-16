@@ -1,5 +1,5 @@
-const webpack              = require('webpack');
-const HtmlWebpackPlugin    = require('html-webpack-plugin');
+const webpack           = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: __dirname + '/src/app.js',

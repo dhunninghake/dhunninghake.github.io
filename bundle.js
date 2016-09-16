@@ -20382,15 +20382,16 @@
 	      var styles = (0, _vudu2.default)({
 	        container: {
 	          width: '100%',
-	          height: '100vh',
 	          display: 'table',
-	          fontFamily: "'CalibreRegular', sans-serif"
+	          height: 'calc(100vh - 2rem)',
+	          fontFamily: "'CalibreRegular', sans-serif",
+	          transition: 'all 1s ease'
 	        },
 	        cell: {
 	          display: 'table-cell',
 	          verticalAlign: 'middle',
-	          textAlign: 'center',
-	          paddingBottom: '3rem'
+	          paddingBottom: '4rem',
+	          textAlign: 'center'
 	        },
 	        header: {
 	          margin: '0rem',
@@ -20403,7 +20404,7 @@
 	      });
 	      return _react2.default.createElement(
 	        'div',
-	        { className: styles.container, onClick: this.changeBg },
+	        { className: styles.container },
 	        _react2.default.createElement(
 	          'div',
 	          { className: styles.cell },
