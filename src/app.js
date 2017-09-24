@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Icon from 'react-moodycons';
+import { icons, Moodycon } from 'react-moodycons';
 import v from 'vudu';
 
 require('./fonts.css');
@@ -126,6 +126,8 @@ const workHistory = [
 ]
 
 const App = () => {
+  const all = Object.keys(icons);
+  const random = all[Math.floor(Math.random()*all.length)];
   return (
     <div className={styles.container}>
       <Row height={'20%'}>
@@ -134,7 +136,7 @@ const App = () => {
             <h4 className={styles.name}>{'Daniel'}<br/ >{'Hunninghake'}</h4>
             <div className={styles.mood}>
               <span>{'Mood:'}</span>
-              <Icon name='cool' width={46} />
+              <Moodycon name={random} width={46} />
             </div>
           </header>
         </Col>
