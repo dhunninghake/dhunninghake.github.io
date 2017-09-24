@@ -46,6 +46,8 @@
 
 	'use strict';
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -66,43 +68,234 @@
 
 	console.log(_vudu2.default.composes);
 
-	var App = function App() {
-	  var styles = (0, _vudu2.default)({
-	    container: {
-	      fontFamily: '"space_monoregular", Helvetica',
-	      padding: '4rem'
-	    },
-	    headline: {
-	      fontSize: '3vw',
-	      width: '60vw'
-	    }
+	var Row = function Row(_ref) {
+	  var children = _ref.children,
+	      height = _ref.height;
+	  return _react2.default.createElement(
+	    'div',
+	    { style: { display: 'table-row', height: height } },
+	    children
+	  );
+	};
 
-	  });
+	var Col = function Col(_ref2) {
+	  var children = _ref2.children,
+	      style = _ref2.style,
+	      align = _ref2.align,
+	      _ref2$width = _ref2.width,
+	      width = _ref2$width === undefined ? '100%' : _ref2$width;
+	  return _react2.default.createElement(
+	    'div',
+	    { style: _extends({ display: 'table-cell', verticalAlign: align, width: width + '%' }, style) },
+	    children
+	  );
+	};
+
+	var styles = (0, _vudu2.default)({
+	  container: {
+	    fontFamily: '"space_monoregular", Helvetica',
+	    boxSizing: 'border-box',
+	    padding: '2rem 4%',
+	    display: 'table',
+	    height: '100%',
+	    position: 'absolute',
+	    width: '100%',
+	    top: 0,
+	    left: 0,
+	    color: '#333',
+	    'a': {
+	      color: 'inherit',
+	      textDecoration: 'none',
+	      ':hover': {
+	        textDecoration: 'underline'
+	      }
+	    }
+	  },
+	  list: {
+	    listStyleType: 'none',
+	    padding: 0,
+	    'li': {
+	      display: 'inline-block',
+	      marginRight: '2rem',
+	      'span': {
+	        fontSize: '.75rem',
+	        display: 'inline-block',
+	        marginRight: '.25rem'
+	      }
+	    }
+	  },
+	  header: {
+	    display: 'flex',
+	    justifyContent: 'space-between',
+	    alignItems: 'center'
+	  },
+	  footer: {
+	    margin: '0 -.75rem',
+	    'h3': {
+	      fontWeight: 'normal',
+	      margin: 0
+	    },
+	    'h5': {
+	      fontWeight: 'normal',
+	      padding: '1rem 0 0',
+	      margin: 0
+	    }
+	  },
+	  mood: {
+	    display: 'flex',
+	    alignItems: 'center',
+	    'span': {
+	      marginRight: '1rem'
+	    }
+	  },
+	  headline: {
+	    fontSize: '2.8vw',
+	    width: '56vw',
+	    margin: '0 0 1rem'
+	  },
+	  name: {
+	    fontWeight: 'normal'
+	  }
+	});
+
+	var links = [{
+	  symbol: String.fromCharCode(9824),
+	  link: 'https://www.instagram.com/dhunninghake/',
+	  name: 'Instagram'
+	}, {
+	  symbol: String.fromCharCode(9827),
+	  link: 'https://twitter.com/dhunninghake',
+	  name: 'Twitter'
+	}, {
+	  symbol: String.fromCharCode(9829),
+	  link: 'https://github.com/dhunninghake',
+	  name: 'Github'
+	}, {
+	  symbol: String.fromCharCode(9830),
+	  link: 'mailto:d@dhunninghake.com',
+	  name: 'Email'
+	}];
+
+	var workHistory = [{
+	  job: 'Kickstarter',
+	  when: 'Currently:',
+	  link: 'http://kickstarter.com'
+	}, {
+	  job: 'Sanctuary Computer',
+	  when: 'Previously:',
+	  link: 'http://www.sanctuary.computer/'
+	}, {
+	  job: 'Drip',
+	  when: 'Before that:',
+	  link: 'http://drip.kickstarter.com'
+	}];
+
+	var App = function App() {
 	  return _react2.default.createElement(
 	    'div',
 	    { className: styles.container },
-	    _react2.default.createElement(_reactMoodycons2.default, { name: 'cool', width: 46 }),
 	    _react2.default.createElement(
-	      'h1',
-	      null,
-	      'Daniel Hunninghake'
+	      Row,
+	      { height: '20%' },
+	      _react2.default.createElement(
+	        Col,
+	        { align: 'top' },
+	        _react2.default.createElement(
+	          'header',
+	          { className: styles.header },
+	          _react2.default.createElement(
+	            'h4',
+	            { className: styles.name },
+	            'Daniel',
+	            _react2.default.createElement('br', null),
+	            'Hunninghake'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: styles.mood },
+	            _react2.default.createElement(
+	              'span',
+	              null,
+	              'Mood:'
+	            ),
+	            _react2.default.createElement(_reactMoodycons2.default, { name: 'cool', width: 46 })
+	          )
+	        )
+	      )
 	    ),
 	    _react2.default.createElement(
-	      'p',
-	      { className: styles.headline },
-	      'I’m a product designer & developer focused on empowering creators through amazing tech. Based in Brooklyn,NY.'
+	      Row,
+	      { height: '60%' },
+	      _react2.default.createElement(
+	        Col,
+	        { align: 'middle' },
+	        _react2.default.createElement(
+	          'p',
+	          { className: styles.headline },
+	          'I’m a product designer & developer focused on empowering creators through amazing tech. Based in Brooklyn,NY.'
+	        ),
+	        _react2.default.createElement(
+	          'ul',
+	          { className: styles.list },
+	          links.map(function (link) {
+	            return _react2.default.createElement(
+	              'li',
+	              { key: link.name },
+	              _react2.default.createElement(
+	                'span',
+	                null,
+	                link.symbol
+	              ),
+	              _react2.default.createElement(
+	                'a',
+	                { href: link.link },
+	                link.name
+	              )
+	            );
+	          })
+	        )
+	      )
+	    ),
+	    _react2.default.createElement(
+	      Row,
+	      { height: '20%' },
+	      _react2.default.createElement(
+	        Col,
+	        { align: 'bottom' },
+	        _react2.default.createElement(
+	          'footer',
+	          { className: styles.footer },
+	          workHistory.map(function (history) {
+	            return _react2.default.createElement(
+	              Col,
+	              { key: history.job, width: 4 / 12, style: { padding: '0 .75rem' } },
+	              _react2.default.createElement(
+	                'a',
+	                { href: history.link },
+	                _react2.default.createElement(
+	                  'div',
+	                  { style: { borderTop: '1px solid black' } },
+	                  _react2.default.createElement(
+	                    'h5',
+	                    null,
+	                    history.when
+	                  ),
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    history.job
+	                  )
+	                )
+	              )
+	            );
+	          })
+	        )
+	      )
 	    )
 	  );
 	};
 
 	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('app'));
-
-	// <ul className={styles.list}>
-	//   <li><a href='https://www.instagram.com/dhunninghake/' target='_blank'>Instagram</a></li>
-	//   <li><a href='https://twitter.com/dhunninghake' target='_blank'>Twitter</a></li>
-	//   <li><a href='https://github.com/dhunninghake' target='_blank'>Github</a></li>
-	//   <li><a href='mailto:d@dhunninghake.com'>Email</a></li>
-	// </ul>
 
 /***/ }),
 /* 1 */

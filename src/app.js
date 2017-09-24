@@ -5,16 +5,14 @@ import v from 'vudu';
 
 require('./fonts.css');
 
-console.log(v.composes);
-
 const Row = ({ children, height }) => (
   <div style={{ display: 'table-row', height }}>
     {children}
   </div>
 );
 
-const Col = ({ children, align }) => (
-  <div style={{ display: 'table-cell', verticalAlign: align }}>
+const Col = ({ children, style, align, width = '100%' }) => (
+  <div style={{ display: 'table-cell', verticalAlign: align, width: `${width}%`, ...style }}>
     {children}
   </div>
 );
@@ -23,14 +21,21 @@ const styles = v({
   container: {
     fontFamily: '"space_monoregular", Helvetica',
     boxSizing: 'border-box',
-    padding: '4rem',
+    padding: '2rem 4%',
     display: 'table',
     height: '100%',
     position: 'absolute',
     width: '100%',
     top: 0,
     left: 0,
-    color: '#333'
+    color: '#333',
+    'a': {
+      color: 'inherit',
+      textDecoration: 'none',
+      ':hover': {
+        textDecoration: 'underline'
+      }
+    }
   },
   list: {
     listStyleType: 'none',
@@ -42,19 +47,37 @@ const styles = v({
         fontSize: '.75rem',
         display: 'inline-block',
         marginRight: '.25rem'
-      },
-      'a': {
-        color: 'inherit'
       }
     }
   },
   header: {
-
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  footer: {
+    margin: '0 -.75rem',
+    'h3': {
+      fontWeight: 'normal',
+      margin: 0
+    },
+    'h5': {
+      fontWeight: 'normal',
+      padding: '1rem 0 0',
+      margin: 0
+    }
+  },
+  mood: {
+    display: 'flex',
+    alignItems: 'center',
+    'span': {
+      marginRight: '1rem'
+    }
   },
   headline: {
     fontSize: '2.8vw',
     width: '56vw',
-    marginBottom: '1rem'
+    margin: '0 0 1rem'
   },
   name: {
     fontWeight: 'normal'
@@ -84,15 +107,35 @@ const links = [
   }
 ];
 
+const workHistory = [
+  {
+    job: 'Kickstarter',
+    when: 'Currently:',
+    link: 'http://kickstarter.com'
+  },
+  {
+    job: 'Sanctuary Computer',
+    when: 'Previously:',
+    link: 'http://www.sanctuary.computer/'
+  },
+  {
+    job: 'Drip',
+    when: 'Before that:',
+    link: 'http://drip.kickstarter.com'
+  }
+]
+
 const App = () => {
   return (
     <div className={styles.container}>
       <Row height={'20%'}>
         <Col align={'top'}>
-          <header>
+          <header className={styles.header}>
             <h4 className={styles.name}>{'Daniel'}<br/ >{'Hunninghake'}</h4>
-            <Icon name='cool' width={46} />
-
+            <div className={styles.mood}>
+              <span>{'Mood:'}</span>
+              <Icon name='cool' width={46} />
+            </div>
           </header>
         </Col>
       </Row>
@@ -111,8 +154,17 @@ const App = () => {
       </Row>
       <Row height={'20%'}>
         <Col align={'bottom'}>
-          <footer>
-            {'footer'}
+          <footer className={styles.footer}>
+            {workHistory.map((history) => (
+              <Col key={history.job} width={4/12} style={{ padding: '0 .75rem' }}>
+                <a href={history.link}>
+                  <div style={{borderTop: '1px solid black'}}>
+                    <h5>{history.when}</h5>
+                    <h3>{history.job}</h3>
+                  </div>
+                </a>
+              </Col>
+            ))}
           </footer>
         </Col>
       </Row>
