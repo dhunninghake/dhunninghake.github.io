@@ -216,7 +216,11 @@
 	              null,
 	              'Mood:'
 	            ),
-	            _react2.default.createElement(_reactMoodycons.Moodycon, { name: random, width: 46 })
+	            _react2.default.createElement(
+	              'a',
+	              { href: '/react-moodycons' },
+	              _react2.default.createElement(_reactMoodycons.Moodycon, { name: random, width: 46 })
+	            )
 	          )
 	        )
 	      )

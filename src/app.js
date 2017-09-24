@@ -136,7 +136,9 @@ const App = () => {
             <h4 className={styles.name}>{'Daniel'}<br/ >{'Hunninghake'}</h4>
             <div className={styles.mood}>
               <span>{'Mood:'}</span>
-              <Moodycon name={random} width={46} />
+              <a href='/react-moodycons'>
+                <Moodycon name={random} width={46} />
+              </a>
             </div>
           </header>
         </Col>
