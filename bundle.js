@@ -142,6 +142,10 @@
 	    alignItems: 'center',
 	    'span': {
 	      marginRight: '1rem'
+	    },
+	    'svg': {
+	      display: 'inline-block',
+	      verticalAlign: 'middle'
 	    }
 	  },
 	  headline: {
