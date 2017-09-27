@@ -4,8 +4,6 @@ import { icons, Moodycon } from 'react-moodycons';
 import Bitmoji from './bitmoji.png'
 import v from 'vudu';
 
-console.log(Bitmoji);
-
 require('./fonts.css');
 
 const Row = ({ children, height }) => (
