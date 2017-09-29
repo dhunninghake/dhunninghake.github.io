@@ -121,10 +121,8 @@
 	    'li': {
 	      display: 'inline-block',
 	      marginRight: '2rem',
-	      'span': {
-	        fontSize: '.75rem',
-	        display: 'inline-block',
-	        marginRight: '.25rem'
+	      'a': {
+	        textDecoration: 'underline'
 	      }
 	    }
 	  },
@@ -199,19 +197,15 @@
 	});
 
 	var links = [{
-	  symbol: String.fromCharCode(9824),
 	  link: 'https://www.instagram.com/dhunninghake/',
 	  name: 'Instagram'
 	}, {
-	  symbol: String.fromCharCode(9827),
 	  link: 'https://twitter.com/dhunninghake',
 	  name: 'Twitter'
 	}, {
-	  symbol: String.fromCharCode(9829),
 	  link: 'https://github.com/dhunninghake',
 	  name: 'Github'
 	}, {
-	  symbol: String.fromCharCode(9830),
 	  link: 'mailto:d@dhunninghake.com',
 	  name: 'Email'
 	}];
@@ -300,11 +294,6 @@
 	            return _react2.default.createElement(
 	              'li',
 	              { key: link.name },
-	              _react2.default.createElement(
-	                'span',
-	                null,
-	                link.symbol
-	              ),
 	              _react2.default.createElement(
 	                'a',
 	                { href: link.link },

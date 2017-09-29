@@ -44,10 +44,8 @@ const styles = v({
     'li': {
       display: 'inline-block',
       marginRight: '2rem',
-      'span': {
-        fontSize: '.75rem',
-        display: 'inline-block',
-        marginRight: '.25rem'
+      'a': {
+        textDecoration: 'underline'
       }
     }
   },
@@ -125,22 +123,18 @@ const styles = v({
 
 const links = [
   {
-    symbol: String.fromCharCode(9824),
     link: 'https://www.instagram.com/dhunninghake/',
     name: 'Instagram'
   },
   {
-    symbol: String.fromCharCode(9827),
     link: 'https://twitter.com/dhunninghake',
     name: 'Twitter'
   },
   {
-    symbol: String.fromCharCode(9829),
     link: 'https://github.com/dhunninghake',
     name: 'Github'
   },
   {
-    symbol: String.fromCharCode(9830),
     link: 'mailto:d@dhunninghake.com',
     name: 'Email'
   }
@@ -199,7 +193,6 @@ const App = () => {
           <ul className={styles.list}>
             {links.map((link) => (
               <li key={link.name}>
-                <span>{link.symbol}</span>
                 <a href={link.link}>{link.name}</a>
               </li>
             ))}
