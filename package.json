@@ -4,7 +4,8 @@
   "description": "Designer / developer based in Brooklyn",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --progress --colors"
+    "start": "webpack-dev-server --hot --progress --colors",
+    "build": "webpack"
   },
   "author":
     "Daniel Hunninghake <d@dhunninghake.com> (http://dhunninghake.com/)",
