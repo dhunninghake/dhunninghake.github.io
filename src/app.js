@@ -44,7 +44,7 @@ const App = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <Logo />
-        <Mood />
+        {/* <Mood /> */}
       </header>
       <div>
         <Headline />

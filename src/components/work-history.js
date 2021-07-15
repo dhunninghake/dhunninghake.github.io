@@ -3,8 +3,13 @@ import v from 'vudu';
 
 const workHistory = [
   {
-    job: 'Kickstarter',
+    job: 'Pattern Brands',
     when: 'Currently:',
+    link: 'http://kickstarter.com'
+  },
+  {
+    job: 'Kickstarter',
+    when: 'Previously:',
     link: 'http://kickstarter.com'
   },
   {
@@ -13,8 +18,8 @@ const workHistory = [
     link: 'http://www.sanctuary.computer/'
   },
   {
-    job: 'Drip',
-    when: 'Before that:',
+    job: 'Drip (Pre-Acq.)',
+    when: 'Previously:',
     link: 'http://drip.kickstarter.com'
   }
 ];
