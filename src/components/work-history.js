@@ -5,22 +5,22 @@ const workHistory = [
   {
     job: 'Pattern Brands',
     when: 'Currently:',
-    link: 'http://kickstarter.com'
+    link: 'https://www.patternbrands.com/'
   },
   {
     job: 'Kickstarter',
     when: 'Previously:',
-    link: 'http://kickstarter.com'
+    link: 'https://www.kickstarter.com/'
   },
   {
     job: 'Sanctuary Computer',
     when: 'Previously:',
-    link: 'http://www.sanctuary.computer/'
+    link: 'https://www.sanctuary.computer/'
   },
   {
     job: 'Drip (Pre-Acq.)',
     when: 'Previously:',
-    link: 'http://drip.kickstarter.com'
+    link: 'https://d.rip/'
   }
 ];
 
